@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Manage Book</title>
+    <link rel="icon" href="../img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <ul>
+                        <li class="li3"><a href=""><img src="../img/logo.png" alt="title" class="logo1"></a></li>
+                        <li><a href="">TITLE</a></li>
+                    </ul>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="">Add Book</a></li>
+                        <li><a href="">Library</a></li>
+                        <li><a href="">Subscribe</a></li>
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+    <h1 align="center">Manage Book</h1>
+
+    <div class="center" align="center">
+        <form id="manageuser" action=".php" method="post">
+            <ul>
+                <li class="td3"><label for="booktitle">Book Title</label></li><br>
+                <li class="td3"><label for="category">Category</label></li><br>
+                <li class="td3"><label for="author">Author</label></li><br>
+                <li class="td4"><label for="publisher">Publisher</label></li><br>
+                <li class="td3" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
+                <li class="td3"><label for="Copyright Year">Copyright Year</label></li><br>
+                <li class="td3" style="margin-left: 15%;"><label for="status">Status</label></li><br>
+                <li class="td3"><label for="Copies">Copies</label></li><br>
+            </ul>
+            <ul>
+                <li class="td2">
+                    <input type="text" name="booktitle" class="input1">
+                </li><br>
+
+                <li class="td2">
+                    <select class="select3" name="category" id="category">
+                        <option value="NA"></option>
+                        <option value="1">1 Periodical</option>
+                        <option value="2">2 English</option>
+                        <option value="2">3 Math</option>
+                        <option value="2">4 Science</option>
+                        <option value="2">5 Encyclopedia</option>
+                        <option value="2">6 Filipiniana</option>
+                        <option value="2">7 Newspaper</option>
+                        <option value="2">8 General</option>
+                        <option value="2">9 References</option>
+                    </select>
+                </li><br>
+
+                <li class="td2">
+                    <input type="text" name="author" class="input2">
+                </li><br>
+
+                <li class="td2">
+                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="textarea2"></textarea>
+                </li><br>
+
+                <li class="td2">
+                    <input type="text" name="ISBN" class="input2">
+                </li><br>
+
+                <li class="td2">
+                    <input type="text" name="copyrightyear" class="input5">
+                </li><br>
+
+                <li class="td2">
+                    <li><select class="select4" name="status" id="status">
+                        <option value="NA"></option>
+                        <option value="s1">New</option>
+                        <option value="s2">Old</option>      
+                        <option value="s3">Damage</option>
+                        <option value="s4">Lost</option>
+                        <option value="s5">Archive</option>
+                    </select></li>
+                </li><br>
+                <li class="td2">
+                    <input type="text" name="copyrightyear" class="input5">
+                </li><br>
+            </ul>
+            <button type="submit">Donate My Book</button>
+        </form>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
