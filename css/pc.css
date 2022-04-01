@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+@media screen and (min-width: 900px) {
+
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        height: auto;
+        min-height: 100%;
+        margin-bottom: 17%;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+        font-size: 62.5%;
+        -webkit-text-size-adjust: 100%; 
+        background-image: url("../img/bg.png");
+    }
+    body{
+        font-size: 200%;
+        vertical-align: middle;
+        text-align: center;
+    }
+    ul{
+        display: table-cell;
+        padding: 0;
+        list-style: none;
+        margin-right: 10%;
+        margin-top: 10%;
+        text-align:center; 
+    }
+    input { 
+        float: left;
+        font-size: 85%;
+        margin-top: 10%; 
+        border: 1px solid #ccc; border-radius: 4px;
+    }
+    textarea { 
+        float: left;
+        font-size: 100%;
+        margin-top: 10%;  
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+    }
+    select { 
+        font-size: 80%;
+        margin-top: 10%;  
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+    }
+    h1 { 
+        padding-top: 130px; 
+        color: white;
+    }
+
+    .logo1 {
+        padding-top: 5px;
+        height: 100%; 
+        width: 100%;
+    }
+
+    .center {
+        position: absolute;
+        width: 55%;
+        display: block;
+        overflow: auto;
+        min-height: 100%;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 2px solid black;
+        background-color: white; 
+    }
+
+    .td{ 
+        float:right; 
+        margin-top: 48%;
+    }
+    .td2{ 
+        float: left; 
+        margin-top: 3%;
+        margin-left: 20%;
+    }
+    .td3{ 
+        float:right; 
+        margin-top: 34%;
+    }
+    .td4{ 
+        float:right; 
+        margin-top: 34%;
+    }
+    .td5{ 
+        float: right; 
+        margin-top: 32.5%;
+    }
+
+    .input1 {
+        width:250px; 
+        height:35px; 
+        padding: 12px; 
+        margin-top: 15%;   
+    }
+    .input2 {
+        width:250px; 
+        height:35px; 
+        padding: 12px;    
+    }
+    .input3 {
+        margin-top: 220%;    
+    }
+    .input4 {
+        margin-top: 18%; 
+        margin-left: 15%;
+    }
+    .input5 {
+        width:70px; 
+        height:35px; 
+        padding: 12px; 
+        margin-top: 40%; 
+        text-align: center;
+    }
+
+    .li1 {
+        float: left; 
+        margin-top: 15%; 
+        margin-left: 2%;
+    }
+    .li2 {
+        float: left; 
+        margin-top: 15%; 
+        margin-left: 2%;
+    }
+
+    .label1 {
+        font-size: 80%;
+    }
+
+    .textarea1 {
+        width:300px; 
+        height:130px; 
+        margin-top: 14%; 
+        padding: 12px; 
+    }
+    .textarea2 {
+        width:300px; 
+        height:90px; 
+        margin-top: 10%; 
+        padding: 12px; 
+    }
+
+    .select1 {
+        float: left; 
+        margin-top: 35%; 
+        padding: 6px; 
+    }
+    .select2 {
+        float: left; 
+        margin-left: 20%;
+        margin-top: 14%; 
+        padding: 6px; 
+    }
+    .select3 {
+        float: left; 
+        margin-top: 20%; 
+        margin-left: 0; 
+        padding: 6px; 
+    }
+    .select4 {
+        float: left; 
+        margin-top: 13.5%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 6px; 
+    }
+
+    .nav {
+        font-size: 62.5%;
+        width: 100%;
+        height: 55px;
+        position: fixed;
+        line-height: 65px;
+        text-align: center;
+        z-index:999;
+    }
+    .nav div.logo {
+        height: 45px;     
+        float: left;
+    } 
+    .nav div.logo ul {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding-left: 3rem;
+    }
+    .nav div.logo ul li {
+        width: auto;
+        height: 45px;
+        padding: 0;
+        padding-right: 3rem;
+    }
+    .nav div.logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.5rem;
+        line-height: 45px;
+    }
+    .nav div.logo a:hover {
+        color: #000000;
+    }
+    .nav div.main_list {
+        height: 45px;
+        float: right;
+    }
+    .nav div.main_list ul {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .nav div.main_list ul li {
+        width: auto;
+        height: 45px;
+        padding: 0;
+        padding-right: 3rem;
+    }
+    .nav div.main_list ul li a {
+        text-decoration: none;
+        color: #fff;
+        line-height: 45px;
+        font-size: 2.4rem;
+    }
+    .nav div.main_list ul li a:hover {
+        color: #000000;
+    }
+    .nav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+    .affix {
+        padding: 0;
+        background-color: #a4d7f5;
+    }
+
+    button {
+        background-color: #4c9ed9;
+        color: #ffffff;
+        width:200px; 
+        height:40px; 
+        margin-top: 8%; 
+        margin-bottom: 3%; 
+        font-family: Trebuchet MS; 
+        font-size: 85%;
+        border:1px solid #111;
+    }
+    button:hover {
+        background-color: #ffffff;
+        color: #4c9ed9;
+        border:1px solid #111;
+    }
+    .back {
+        width:90px; 
+        height:40px;
+    }
+}
