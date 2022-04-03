@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="../css/Dashboard.css">
+</head>
+<body>
+
+<header>
+	<div class="header">
+		<nav class="nav1">
+		<img src="../img/logo.png" alt="Logo" width="60px" align="left">
+			<ul class="navlink">
+				<li><a href="#" class="nav">Add Book</a></li>
+				<li><a href="#" class="nav">Library</a></li>
+				<li><a href="#" class="nav">Subscribe</a></li>
+				<li><a href="#" class="nav">Logout</a></li>
+			</ul>
+		</nav>
+	</div> <!--header-->
+</header>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav1').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav1').removeClass('affix');
+            }
+        });
+    </script>
+
+	<div class="border">
+		<h1 class="subheader"> Good Morning! </h1>
+		<br><br><br><br>
+		<div class="whiteborder">
+			<h2 class="wtl"> My books </h2>
+			<h2 class="wtll" style="color:gray;">(None. <a href="" style="color:purple;"> Donate some books</a>  now)</h2>
+			<h2 class="wl"> Library </h2>
+			<div class="header">
+				<div class="lp">
+				<form action="/action_page.php">
+					<select name="" id="">
+						<option value="">All categories</option>
+						<option value="">?</option>
+					</select>
+				</form>
+				</div> <!--lp-->
+				<div class="f2">
+					<ul class="navlink">
+						<li>
+							<form class="example" action="/action_page.php" style="margin:auto;max-width:200px">
+							<input type="text" placeholder="Search book or ISBN..." name="search"></form>
+						</li>
+					</ul>
+				</div>
+			</div> <!--header-->
+			<br>
+			<div class="cyanborder">
+				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+				<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+			</div> <!-- Cyanborder -->
+			
+			<br>
+			
+			<div class="cyanborder">
+				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+				<h2 class="cfr"> Status: New <span class="red"> Booked </span></h2>
+			</div> <!-- Cyanborder -->
+			
+			<br>
+			
+			<div class="cyanborder">
+				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+				<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+			</div> <!-- Cyanborder -->
+			
+			<br>
+			
+			<div class="cyanborder">
+				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+				<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+			</div> <!-- Cyanborder -->
+			
+			<br>
+			
+			<div class="cyanborder">
+				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+				<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+			</div> <!-- Cyanborder -->
+			
+			<br>
+			
+		</div> <!-- whiteborder -->
+	</div> <!-- border -->
+
+
+</body>
+</html>
