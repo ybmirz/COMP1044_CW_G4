@@ -14,13 +14,16 @@
         font-family: "Quicksand", sans-serif;
         font-size: 62.5%;
         -webkit-text-size-adjust: 100%; 
-        background-image: url("../img/bg.png");
+        background: url("../img/bg.png") no-repeat fixed,
+        linear-gradient(#202c41, #131b28) fixed;
     }
+
     body{
         font-size: 200%;
         vertical-align: middle;
         text-align: center;
     }
+    
     ul{
         display: table-cell;
         padding: 0;
@@ -29,12 +32,91 @@
         margin-top: 10%;
         text-align:center; 
     }
+
+    .listyle {
+        float: right;
+        margin-top: 48%;
+    }
+    
+    .listyle2 {
+        float: left;
+        margin-top: 3%;
+        margin-left: 20%;
+    }
+    
+    .listyle3 {
+        float: right;
+        margin-top: 34%;
+    }
+    
+    .listyle4 {
+        float: right;
+        margin-top: 34%;
+    }
+    
+    .listyle5 {
+        float: right;
+        margin-top: 32.5%;
+    }
+
+    .listyle6 {
+        width: 35%;
+        float: right;
+        margin-top: 72%;
+        margin-left: 40%;
+    }
+
+    .listyle7 {
+        float: right;
+        margin-right: 140px;
+    }
+
     input { 
         float: left;
         font-size: 85%;
         margin-top: 10%; 
         border: 1px solid #ccc; border-radius: 4px;
     }
+
+    .input1 {
+        width: 250px;
+        height: 35px;
+        padding: 12px;
+        margin-top: 15%;
+    }
+    
+    .input2 {
+        width: 250px;
+        height: 35px;
+        padding: 12px;
+    }
+    
+    .input3 {
+        margin-top: 220%;
+    }
+    
+    .input4 {
+        margin-top: 18%;
+        margin-left: 15%;
+    }
+    
+    .input5 {
+        width: 70px;
+        height: 35px;
+        padding: 12px;
+        margin-top: 40%;
+        text-align: center;
+    }
+
+    .input6 {
+        
+        width: 100px;
+        height: 35px;
+        padding: 12px;
+        margin-top: 40%;
+        text-align: center;
+    }
+
     textarea { 
         float: left;
         font-size: 100%;
@@ -42,18 +124,74 @@
         border: 1px solid #ccc; 
         border-radius: 4px;
     }
+
+    .address {
+        width: 300px;
+        height: 130px;
+        margin-top: 14%;
+        padding: 12px;
+    }
+    
+    .publisher {
+        width: 300px;
+        height: 90px;
+        margin-top: 10%;
+        padding: 12px;
+    }
+
     select { 
         font-size: 80%;
         margin-top: 10%;  
         border: 1px solid #ccc; 
         border-radius: 4px;
     }
+    
+    .selecttype {
+        float: left;
+        margin-top: 35%;
+        padding: 6px;
+    }
+    
+    .selectyear {
+        float: left;
+        margin-left: 20%;
+        margin-top: 14%;
+        padding: 6px;
+    }
+
+    .selectcategory {
+        float: left;
+        margin-top: 20%;
+        margin-left: 0;
+        padding: 6px;
+    }
+    
+    .selectstatus {
+        float: left;
+        margin-top: 13.5%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 6px;
+    }
+
+    .radio1 {
+        float: left;
+        margin-top: 15%;
+        margin-left: 2%;
+    }
+    
+    .radio2 {
+        float: left;
+        margin-top: 15%;
+        margin-left: 2%;
+    }
+
     h1 { 
-        padding-top: 130px; 
+        padding-top: 120px; 
         color: white;
     }
 
-    .logo1 {
+    .logostyle {
         padding-top: 5px;
         height: 100%; 
         width: 100%;
@@ -70,107 +208,10 @@
         transform: translateX(-50%);
         border: 2px solid black;
         background-color: white; 
-    }
+    }    
 
-    .td{ 
-        float:right; 
-        margin-top: 48%;
-    }
-    .td2{ 
-        float: left; 
-        margin-top: 3%;
-        margin-left: 20%;
-    }
-    .td3{ 
-        float:right; 
-        margin-top: 34%;
-    }
-    .td4{ 
-        float:right; 
-        margin-top: 34%;
-    }
-    .td5{ 
-        float: right; 
-        margin-top: 32.5%;
-    }
-
-    .input1 {
-        width:250px; 
-        height:35px; 
-        padding: 12px; 
-        margin-top: 15%;   
-    }
-    .input2 {
-        width:250px; 
-        height:35px; 
-        padding: 12px;    
-    }
-    .input3 {
-        margin-top: 220%;    
-    }
-    .input4 {
-        margin-top: 18%; 
-        margin-left: 15%;
-    }
-    .input5 {
-        width:70px; 
-        height:35px; 
-        padding: 12px; 
-        margin-top: 40%; 
-        text-align: center;
-    }
-
-    .li1 {
-        float: left; 
-        margin-top: 15%; 
-        margin-left: 2%;
-    }
-    .li2 {
-        float: left; 
-        margin-top: 15%; 
-        margin-left: 2%;
-    }
-
-    .label1 {
+    .labelfont {
         font-size: 80%;
-    }
-
-    .textarea1 {
-        width:300px; 
-        height:130px; 
-        margin-top: 14%; 
-        padding: 12px; 
-    }
-    .textarea2 {
-        width:300px; 
-        height:90px; 
-        margin-top: 10%; 
-        padding: 12px; 
-    }
-
-    .select1 {
-        float: left; 
-        margin-top: 35%; 
-        padding: 6px; 
-    }
-    .select2 {
-        float: left; 
-        margin-left: 20%;
-        margin-top: 14%; 
-        padding: 6px; 
-    }
-    .select3 {
-        float: left; 
-        margin-top: 20%; 
-        margin-left: 0; 
-        padding: 6px; 
-    }
-    .select4 {
-        float: left; 
-        margin-top: 13.5%;
-        margin-right: 20%;
-        margin-left: 20%;
-        padding: 6px; 
     }
 
     .nav {
@@ -182,10 +223,12 @@
         text-align: center;
         z-index:999;
     }
+
     .nav div.logo {
         height: 45px;     
         float: left;
     } 
+
     .nav div.logo ul {
         width: 100%;
         height: 45px;
@@ -194,25 +237,27 @@
         margin: 0;
         padding-left: 3rem;
     }
+
     .nav div.logo ul li {
-        width: auto;
-        height: 45px;
-        padding: 0;
         padding-right: 3rem;
     }
+
     .nav div.logo a {
         text-decoration: none;
         color: #fff;
         font-size: 2.5rem;
         line-height: 45px;
     }
+    
     .nav div.logo a:hover {
         color: #000000;
     }
+
     .nav div.main_list {
         height: 45px;
         float: right;
     }
+
     .nav div.main_list ul {
         width: 100%;
         height: 45px;
@@ -221,27 +266,32 @@
         margin: 0;
         padding: 0;
     }
+
     .nav div.main_list ul li {
         width: auto;
         height: 45px;
         padding: 0;
         padding-right: 3rem;
     }
+
     .nav div.main_list ul li a {
         text-decoration: none;
         color: #fff;
         line-height: 45px;
         font-size: 2.4rem;
     }
+
     .nav div.main_list ul li a:hover {
         color: #000000;
     }
+
     .nav {
         padding-top: 20px;
         padding-bottom: 20px;
         -webkit-transition: all 0.4s ease;
         transition: all 0.4s ease;
     }
+
     .affix {
         padding: 0;
         background-color: #a4d7f5;
@@ -258,12 +308,14 @@
         font-size: 85%;
         border:1px solid #111;
     }
+
     button:hover {
         background-color: #ffffff;
         color: #4c9ed9;
         border:1px solid #111;
     }
-    .back {
+
+    button.back {
         width:90px; 
         height:40px;
     }

@@ -14,11 +14,11 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li class="li3"><a href=""><img src="../img/logo.png" alt="title" class="logo1"></a></li>
-                        <li><a href="">TITLE</a></li>
+                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="">TITLE</a></li>
                     </ul>
                 </div>
-                <div id="mainListDiv" class="main_list">
+                <div id="mainLislistyleiv" class="main_list">
                     <ul class="navlinks">
                         <li><a href="">Add Book</a></li>
                         <li><a href="">Library</a></li>
@@ -47,52 +47,61 @@
     <div class="center" align="center">
         <form id="manageuser" action=".php" method="post">
             <ul>
-                <li class="td"><label for="firstname">First Name</label></li><br>
-                <li class="td"><label for="lastname">Last Name</label></li><br>
-                <li class="td"><label for="gender">Gender</label></li><br>
-                <li class="td"><label for="address">Address</label></li><br>
-                <li class="td" style="margin-top: 142%;"><label for="contact">Contact</label></li><br>
-                <li class="td"><label for="type">Type</label></li><br>
-                <li class="td" style="margin-left: 15%;"><label for="year">Year</label></li><br>
+                <li class="listyle"><label for="firstname">First Name</label></li><br>
+                <li class="listyle"><label for="lastname">Last Name</label></li><br>
+                <li class="listyle"><label for="gender">Gender</label></li><br>
+                <li class="listyle"><label for="address">Address</label></li><br>
+                <li class="listyle" style="margin-top: 142%;"><label for="contact">Contact</label></li><br>
+                <li class="listyle"><label for="type">Type</label></li><br>
+                <li class="listyle" style="margin-left: 15%;"><label for="year">Year</label></li><br>
             </ul>
             <ul>
-                <li class="td2">
+                <li class="listyle2">
                     <input type="text" name="firstname" class="input1">
                 </li><br>
 
-                <li class="td2">
+                <li class="listyle2">
                     <input type="text" name="lastname" class="input2">
                 </li><br>
 
-                <li class="td2">
-                    <input type="radio" id="female" name="gender" value="female" class="input3">
-                    <li class="li1"><label class="label1" for="female">Female</label></li>
+                <li class="listyle2">
+                    <input type="radio" id="female" name="gender" value="female" class="input3" checked="checked">
+                    <li class="radio1"><label class="labelfont" for="female">Female</label></li>
                 </li>
                 
                 <li>
                     <input type="radio" id="male" name="gender" value="male" class="input4">
-                    <li class="li2"><label for="male" class="label1">Male</label></li>
+                    <li class="radio2"><label for="male" class="labelfont">Male</label></li>
                 </li><br>
 
-                <li class="td2">
-                    <textarea name="address" rows="5" cols="35" wrap="soft" class="textarea1"></textarea>
+                <li class="listyle2">
+                    <textarea name="address" rows="5" cols="35" wrap="soft" class="address"></textarea>
                 </li><br>
 
-                <li class="td2">
+                <li class="listyle2">
                     <input type="text" name="contact" class="input2">
                 </li><br>
 
-                <li class="td2">
-                    <select class="select1" name="type" id="type">
-                        <option value="NA"></option>
+                <li class="listyle2">
+                    <select class="selecttype" name="type" id="type">
                         <option value="student">Student</option>
-                        <option value="staff">Teacher</option>
+                        <option value="teacher">Teacher</option>
                     </select>
                 </li><br>
 
-                <li class="td2">
-                    <li><select class="select2" name="year" id="year">
-                        <option value="NA"></option>
+                <script>
+                    document.getElementById("type").onchange = function () {
+                            if (this.options[this.selectedIndex].value == "teacher") {
+                                document.getElementById("year").disabled = true;
+                            }
+                            else {
+                                document.getElementById("year").disabled = false;
+                            }
+                        }
+                </script>
+
+                <li class="listyle2">
+                    <li><select class="selectyear" name="year" id="year">
                         <option value="y1">First Year</option>
                         <option value="y2">Second Year</option>
                         <option value="y3">Third Year</option>
