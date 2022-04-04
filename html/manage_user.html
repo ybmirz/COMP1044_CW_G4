@@ -51,7 +51,7 @@
                 <li class="listyle"><label for="lastname">Last Name</label></li><br>
                 <li class="listyle"><label for="gender">Gender</label></li><br>
                 <li class="listyle"><label for="address">Address</label></li><br>
-                <li class="listyle" style="margin-top: 142%;"><label for="contact">Contact</label></li><br>
+                <li class="listyle8"><label for="contact">Contact</label></li><br>
                 <li class="listyle"><label for="type">Type</label></li><br>
                 <li class="listyle" style="margin-left: 15%;"><label for="year">Year</label></li><br>
             </ul>
@@ -75,7 +75,7 @@
                 </li><br>
 
                 <li class="listyle2">
-                    <textarea name="address" rows="5" cols="35" wrap="soft" class="address"></textarea>
+                    <textarea name="address" rows="5" cols="35" wrap="soft"></textarea>
                 </li><br>
 
                 <li class="listyle2">
@@ -89,6 +89,7 @@
                     </select>
                 </li><br>
 
+                <!--disable #year if user is teacher-->
                 <script>
                     document.getElementById("type").onchange = function () {
                             if (this.options[this.selectedIndex].value == "teacher") {
@@ -113,8 +114,4 @@
             <button type="submit">Update User Records</button>
         </form>
     </div>
-
-    <footer>
-
-    </footer>
 </body>

@@ -35,7 +35,7 @@
 
     .listyle {
         float: right;
-        margin-top: 48%;
+        margin-top: 46%;
     }
     
     .listyle2 {
@@ -51,7 +51,7 @@
     
     .listyle4 {
         float: right;
-        margin-top: 34%;
+        margin-top: 42%;
     }
     
     .listyle5 {
@@ -68,7 +68,17 @@
 
     .listyle7 {
         float: right;
-        margin-right: 140px;
+        margin-right: 100px;
+    }
+
+    .listyle8 {
+        float: right;
+        margin-top: 98%;
+    }
+
+    .listyle9 {
+        float: right;
+        margin-top: 32.5%;
     }
 
     input { 
@@ -92,7 +102,7 @@
     }
     
     .input3 {
-        margin-top: 220%;
+        margin-top: 190%;
     }
     
     .input4 {
@@ -109,7 +119,6 @@
     }
 
     .input6 {
-        
         width: 100px;
         height: 35px;
         padding: 12px;
@@ -123,19 +132,9 @@
         margin-top: 10%;  
         border: 1px solid #ccc; 
         border-radius: 4px;
-    }
-
-    .address {
-        width: 300px;
-        height: 130px;
-        margin-top: 14%;
-        padding: 12px;
-    }
-    
-    .publisher {
-        width: 300px;
+        width: 250px;
         height: 90px;
-        margin-top: 10%;
+        margin-top: 17%;
         padding: 12px;
     }
 
@@ -161,7 +160,8 @@
 
     .selectcategory {
         float: left;
-        margin-top: 20%;
+        margin-top: 23%;
+        margin-bottom: 5%;
         margin-left: 0;
         padding: 6px;
     }
@@ -182,7 +182,7 @@
     
     .radio2 {
         float: left;
-        margin-top: 15%;
+        margin-top: 14.5%;
         margin-left: 2%;
     }
 
@@ -294,11 +294,11 @@
 
     .affix {
         padding: 0;
-        background-color: #a4d7f5;
+        background-color: #2da5c0;
     }
 
     button {
-        background-color: #4c9ed9;
+        background-color: #0C343D;
         color: #ffffff;
         width:200px; 
         height:40px; 
@@ -311,7 +311,7 @@
 
     button:hover {
         background-color: #ffffff;
-        color: #4c9ed9;
+        color: #0C343D;
         border:1px solid #111;
     }
 

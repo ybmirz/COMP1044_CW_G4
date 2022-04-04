@@ -50,14 +50,14 @@
                 <li class="listyle3"><label for="booktitle">Book Title</label></li><br>
                 <li class="listyle3"><label for="category">Category</label></li><br>
                 <li class="listyle3"><label for="author">Author</label></li><br>
-                <li class="listyle3"><label for="publisher">Publisher</label></li><br>
+                <li class="listyle4"><label for="publisher">Publisher</label></li><br>
                 <li class="listyle6"><label for="ISBN">ISBN</label></li><br>
-                <li class="listyle3"><label for="copyright year">Copyright Year</label></li><br>
-                <li class="listyle3" style="margin-left: 15%;"><label for="status">Status</label></li><br>
+                <li class="listyle5"><label for="copyright year">Copyright Year</label></li><br>
+                <li class="listyle5" style="margin-left: 15%;"><label for="status">Status</label></li><br>
             </ul>
             <ul>
                 <li class="listyle2">
-                    <input type="text" name="booktitle" class="input1">
+                    <input id="booktitle" type="text" name="booktitle" class="input1">
                 </li><br>
 
                 <li class="listyle2">
@@ -75,19 +75,19 @@
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="author" class="input2">
+                    <input type="text" name="author" class="input2" id="author">
                 </li><br>
 
                 <li class="listyle2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="publisher"></textarea>
+                    <textarea name="publisher" rows="5" cols="35" wrap="soft" id="publisher"></textarea>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="ISBN" class="input2">
+                    <input type="text" name="ISBN" class="input2" id="ISBN">
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="copyrightyear" class="input5">
+                    <input type="text" name="copyrightyear" class="input5" id="year">
                 </li><br>
 
                 <li class="listyle2">
@@ -98,11 +98,14 @@
                     </select></li>
                 </li><br>
             </ul>
-            <button type="submit">Donate My Book</button>
+            <button type="submit" id="submit">Donate My Book</button>
         </form>
     </div>
 
-    <footer>
-
-    </footer>
+    <!--inform user book is added-->
+    <script>
+        $("#submit").click(function () {
+            alert("Book successfully added.");
+        });
+    </script>
 </body>
