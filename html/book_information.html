@@ -4,7 +4,6 @@
     <link rel="icon" href="../img/logo.png" />
     <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
@@ -57,7 +56,7 @@
             </ul>
             <ul>
                 <li class="td2">
-                    <select class="select3" name="category" id="category">
+                    <select class="select3" name="category" id="category" disabled>
                         <option value="NA"></option>
                         <option value="1">1 Periodical</option>
                         <option value="2">2 English</option>
@@ -72,19 +71,19 @@
                 </li><br>
 
                 <li class="td2">
-                    <input type="text" name="author" class="input2">
+                    <input type="text" name="author" class="input2" value="<?php echo $author?>" disabled>
                 </li><br>
 
                 <li class="td2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="textarea2"></textarea>
+                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="textarea2" disabled><?php echo $publisher?></textarea>
                 </li><br>
 
                 <li class="td2">
-                    <input type="text" name="ISBN" class="input2">
+                    <input type="text" name="ISBN" class="input2" value="<?php echo $isbn?>" disabled>
                 </li><br>
 
                 <li class="td2">
-                    <input type="text" name="copyrightyear" class="input5">
+                    <input type="text" name="copyrightyear" class="input5" value="<?php echo $copyrightYR?>" disabled>
                 </li><br>
 
                 <li class="td2">
