@@ -91,7 +91,7 @@
 
                 <!--disable #year if user is teacher-->
                 <script>
-                    document.getElementById("type").onchange = function () {
+                    document.getElementById("type").onchange = function disableyear() {
                             if (this.options[this.selectedIndex].value == "teacher") {
                                 document.getElementById("year").disabled = true;
                             }
@@ -107,7 +107,6 @@
                         <option value="y2">Second Year</option>
                         <option value="y3">Third Year</option>
                         <option value="y4">Fourth Year</option>
-                        <option value="faculty">Faculty</option>
                     </select></li>
                 </li><br>
             </ul>
