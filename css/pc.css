@@ -4,15 +4,15 @@
 
     html, 
     body {
-        margin: 0;
-        padding: 0;
         position: relative;
         height: auto;
         min-height: 100%;
+        padding: 0;
+        margin: 0;
         margin-bottom: 17%;
-        box-sizing: border-box;
-        font-family: "Quicksand", sans-serif;
         font-size: 62.5%;
+        font-family: "Quicksand", sans-serif;
+        box-sizing: border-box;
         -webkit-text-size-adjust: 100%; 
         background: url("../img/bg.png") no-repeat fixed, linear-gradient(#202c41, #131b28) fixed;
     }
@@ -26,10 +26,10 @@
     ul{
         display: table-cell;
         padding: 0;
-        list-style: none;
-        margin-right: 10%;
         margin-top: 10%;
-        text-align:center; 
+        margin-right: 10%;
+        list-style: none;
+        text-align: center; 
     }
 
     .listyle {
@@ -59,8 +59,8 @@
     }
 
     .listyle6 {
-        width: 35%;
         float: right;
+        width: 35%;
         margin-top: 72%;
         margin-left: 40%;
     }
@@ -82,9 +82,10 @@
 
     input { 
         float: left;
+        margin-top: 10%;
         font-size: 85%;
-        margin-top: 10%; 
-        border: 1px solid #ccc; border-radius: 4px;
+        border: 1px solid #ccc; 
+        border-radius: 4px;
     }
 
     .input1 {
@@ -127,50 +128,49 @@
 
     textarea { 
         float: left;
-        font-size: 100%;
-        margin-top: 10%;  
-        border: 1px solid #ccc; 
-        border-radius: 4px;
         width: 250px;
         height: 90px;
-        margin-top: 17%;
         padding: 12px;
+        margin-top: 17%;
+        font-size: 100%;
+        border: 1px solid #ccc; 
+        border-radius: 4px;
     }
 
     select { 
+        margin-top: 10%;
         font-size: 80%;
-        margin-top: 10%;  
         border: 1px solid #ccc; 
         border-radius: 4px;
     }
     
     .selecttype {
         float: left;
-        margin-top: 35%;
         padding: 6px;
+        margin-top: 35%;
     }
     
     .selectyear {
         float: left;
-        margin-left: 20%;
-        margin-top: 14%;
         padding: 6px;
+        margin-top: 14%;
+        margin-left: 20%;
     }
 
     .selectcategory {
         float: left;
+        padding: 6px;
         margin-top: 23%;
         margin-bottom: 5%;
         margin-left: 0;
-        padding: 6px;
     }
     
     .selectstatus {
         float: left;
+        padding: 6px;
         margin-top: 13.5%;
         margin-right: 20%;
         margin-left: 20%;
-        padding: 6px;
     }
 
     .radio1 {
@@ -191,16 +191,16 @@
     }
 
     .logostyle {
-        padding-top: 5px;
-        height: 100%; 
         width: 100%;
+        height: 100%;
+        padding-top: 5px;
     }
 
     .center {
         position: absolute;
-        width: 55%;
         display: block;
         overflow: auto;
+        width: 55%;
         min-height: 100%;
         top: 200px;
         left: 50%;
@@ -214,27 +214,27 @@
     }
 
     .nav {
-        font-size: 62.5%;
+        position: fixed;
         width: 100%;
         height: 55px;
-        position: fixed;
+        font-size: 62.5%;
         line-height: 65px;
         text-align: center;
         z-index:999;
     }
 
     .nav div.logo {
-        height: 45px;     
         float: left;
+        height: 45px;     
     } 
 
     .nav div.logo ul {
+        display: flex;
         width: 100%;
         height: 45px;
-        display: flex;
-        list-style: none;
-        margin: 0;
         padding-left: 3rem;
+        margin: 0;
+        list-style: none;
     }
 
     .nav div.logo ul li {
@@ -242,10 +242,10 @@
     }
 
     .nav div.logo a {
-        text-decoration: none;
-        color: #fff;
         font-size: 2.5rem;
         line-height: 45px;
+        text-decoration: none;
+        color: #fff;
     }
     
     .nav div.logo a:hover {
@@ -253,31 +253,30 @@
     }
 
     .nav div.main_list {
-        height: 45px;
         float: right;
+        height: 45px;
     }
 
     .nav div.main_list ul {
+        display: flex;
         width: 100%;
         height: 45px;
-        display: flex;
-        list-style: none;
-        margin: 0;
         padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
     .nav div.main_list ul li {
         width: auto;
         height: 45px;
-        padding: 0;
         padding-right: 3rem;
     }
 
     .nav div.main_list ul li a {
+        font-size: 2.4rem;
+        line-height: 45px;
         text-decoration: none;
         color: #fff;
-        line-height: 45px;
-        font-size: 2.4rem;
     }
 
     .nav div.main_list ul li a:hover {
@@ -296,26 +295,26 @@
         background-color: #2da5c0;
     }
 
-    button {
-        background-color: #0C343D;
-        color: #ffffff;
-        width:200px; 
-        height:40px; 
+    button { 
+        width: 200px; 
+        height: 40px; 
         margin-top: 8%; 
         margin-bottom: 3%; 
-        font-family: Trebuchet MS; 
         font-size: 85%;
-        border:1px solid #111;
+        font-family: Trebuchet MS; 
+        border: 1px solid #111;
+        background-color: #0C343D;
+        color: #ffffff;
     }
 
     button:hover {
+        border:1px solid #111;
         background-color: #ffffff;
         color: #0C343D;
-        border:1px solid #111;
     }
 
     button.back {
-        width:90px; 
-        height:40px;
+        width: 90px; 
+        height: 40px;
     }
 }
