@@ -14,8 +14,8 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li class="li3"><a href=""><img src="../img/logo.png" alt="title" class="logo1"></a></li>
-                        <li><a href="">TITLE</a></li>
+                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="">TITLE</a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
@@ -45,68 +45,67 @@
     <h1 align="center">Add Book</h1>
 
     <div class="center" align="center">
-        <form id="manageuser" action=".php" method="post">
+        <form id="addbook" action=".php" method="post">
             <ul>
-                <li class="td3"><label for="booktitle">Book Title</label></li><br>
-                <li class="td3"><label for="category">Category</label></li><br>
-                <li class="td3"><label for="author">Author</label></li><br>
-                <li class="td4"><label for="publisher">Publisher</label></li><br>
-                <li class="td3" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
-                <li class="td3"><label for="Copyright Year">Copyright Year</label></li><br>
-                <li class="td3" style="margin-left: 15%;"><label for="status">Status</label></li><br>
+                <li class="listyle3"><label for="booktitle">Book Title</label></li><br>
+                <li class="listyle3"><label for="category">Category</label></li><br>
+                <li class="listyle3"><label for="author">Author</label></li><br>
+                <li class="listyle4"><label for="publisher">Publisher</label></li><br>
+                <li class="listyle6"><label for="ISBN">ISBN</label></li><br>
+                <li class="listyle5"><label for="copyright year">Copyright Year</label></li><br>
+                <li class="listyle5" style="margin-left: 15%;"><label for="status">Status</label></li><br>
             </ul>
             <ul>
-                <li class="td2">
-                    <input type="text" name="booktitle" class="input1">
+                <li class="listyle2">
+                    <input id="booktitle" type="text" name="booktitle" class="input1">
                 </li><br>
 
-                <li class="td2">
-                    <select class="select3" name="category" id="category">
-                        <option value="NA"></option>
-                        <option value="1">1 Periodical</option>
-                        <option value="2">2 English</option>
-                        <option value="2">3 Math</option>
-                        <option value="2">4 Science</option>
-                        <option value="2">5 Encyclopedia</option>
-                        <option value="2">6 Filipiniana</option>
-                        <option value="2">7 Newspaper</option>
-                        <option value="2">8 General</option>
-                        <option value="2">9 References</option>
+                <li class="listyle2">
+                    <select class="selectcategory" name="category" id="category">
+                        <option value="1">Periodical</option>
+                        <option value="2">English</option>
+                        <option value="3">Math</option>
+                        <option value="4">Science</option>
+                        <option value="5">Encyclopedia</option>
+                        <option value="6">Filipiniana</option>
+                        <option value="7">Newspaper</option>
+                        <option value="8">General</option>
+                        <option value="9">References</option>
                     </select>
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="author" class="input2">
+                <li class="listyle2">
+                    <input type="text" name="author" class="input2" id="author">
                 </li><br>
 
-                <li class="td2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="textarea2"></textarea>
+                <li class="listyle2">
+                    <textarea name="publisher" rows="5" cols="35" wrap="soft" id="publisher"></textarea>
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="ISBN" class="input2">
+                <li class="listyle2">
+                    <input type="text" name="ISBN" class="input2" id="ISBN">
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="copyrightyear" class="input5">
+                <li class="listyle2">
+                    <input type="text" name="copyrightyear" class="input5" id="year">
                 </li><br>
 
-                <li class="td2">
-                <li><select class="select4" name="status" id="status">
-                        <option value="NA"></option>
+                <li class="listyle2">
+                <li><select class="selectstatus" name="status" id="status">
                         <option value="s1">New</option>
                         <option value="s2">Old</option>
                         <option value="s3">Damage</option>
-                        <option value="s4">Lost</option>
-                        <option value="s5">Archive</option>
                     </select></li>
                 </li><br>
             </ul>
-            <button type="submit">Donate My Book</button>
+            <button type="submit" id="submit">Donate My Book</button>
         </form>
     </div>
 
-    <footer>
-
-    </footer>
+    <!--inform user book is added-->
+    <script>
+        $("#submit").click(function bookadded() {
+            alert("Book successfully added.");
+        });
+    </script>
 </body>
