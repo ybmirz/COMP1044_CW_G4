@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Dashboard</title>
-	<link rel="stylesheet" href="../css/Dashboard.css">
+	<link rel="stylesheet" href="../css/Dashboard.css" media="screen and (min-width: 900px)">
+	<link rel="stylesheet" href="../css/DashboardMobile.css" media="screen and (max-width: 900px)">
 </head>
 <body>
 
 <header>
 	<div class="header">
 		<nav class="nav1">
-		<img src="../img/logo.png" alt="Logo" width="60px" align="left">
+		<img src="../img/logo.png" alt="Logo" width="60px" style="padding-top: 10px; float:left;">
 			<ul class="navlink">
 				<li><a href="#" class="nav">Add Book</a></li>
 				<li><a href="#" class="nav">Library</a></li>
@@ -39,15 +39,13 @@
 			<h2 class="wtl"> My books </h2>
 			<h2 class="wtll" style="color:gray;">(None. <a href="" style="color:purple;"> Donate some books</a>  now)</h2>
 			<h2 class="wl"> Library </h2>
-			<div class="header">
-				<div class="lp">
+			<div class="header2">
 				<form action="/action_page.php">
-					<select name="" id="">
+					<select name="" id="" style="width: 50px;">
 						<option value="">All categories</option>
 						<option value="">?</option>
 					</select>
 				</form>
-				</div> <!--lp-->
 				<div class="f2">
 					<ul class="navlink">
 						<li>
@@ -58,10 +56,24 @@
 				</div>
 			</div> <!--header-->
 			<br>
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
-			</div> <!-- Cyanborder -->
+				
+			<div id="output_div"></div>
+			<script>
+				var output = "";
+				
+				output;
+				for ( var i=0; i < 3; i++) {
+					output += <div class="cyanborder">;
+					output += <h2 id="1" class="ctl"></h2>;
+					output += </div> // Cyanborder
+				}
+				output;
+				
+				document.getElementById("output_div").innerHTML = output;
+			</script>
+				<div class="cyanborder">
+				<h2 id="1" class="ctl"></h2>
+				</div> <!-- Cyanborder -->
 			
 			<br>
 			
