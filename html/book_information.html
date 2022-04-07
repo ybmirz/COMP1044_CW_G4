@@ -13,8 +13,8 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li class="li3"><a href=""><img src="../img/logo.png" alt="title" class="logo1"></a></li>
-                        <li><a href="">TITLE</a></li>
+                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="">TITLE</a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
@@ -44,67 +44,46 @@
     <h1 align="center">get book title & info from database</h1>
 
     <div class="center" align="center">
-        <form id="manageuser" action=".php" method="post">
+        <form id="bookinfo" action=".php" method="post">
             <ul>
-                <li class="td5"><label for="category">Category</label></li><br>
-                <li class="td5"><label for="author">Author</label></li><br>
-                <li class="td4"><label for="publisher">Publisher</label></li><br>
-                <li class="td5" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
-                <li class="td5"><label for="Copyright Year">Copyright Year</label></li><br>
-                <li class="td5" style="margin-left: 15%;"><label for="status">Status</label></li><br>
-                <li class="td5"><label for="Copies">Copies</label></li><br>
+                <li class="listyle9"><label for="category">Category</label></li><br>
+                <li class="listyle9"><label for="author">Author</label></li><br>
+                <li class="listyle4"><label for="publisher">Publisher</label></li><br>
+                <li class="listyle9" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
+                <li class="listyle9"><label for="copyright year">Copyright Year</label></li><br>
+                <li class="listyle9"><label for="status">Status</label></li><br>
+                <li class="listyle9" style="margin-left: 15%;"><label for="Copies">Copies</label></li><br>
             </ul>
             <ul>
-                <li class="td2">
-                    <select class="select3" name="category" id="category" disabled>
-                        <option value="NA"></option>
-                        <option value="1">1 Periodical</option>
-                        <option value="2">2 English</option>
-                        <option value="2">3 Math</option>
-                        <option value="2">4 Science</option>
-                        <option value="2">5 Encyclopedia</option>
-                        <option value="2">6 Filipiniana</option>
-                        <option value="2">7 Newspaper</option>
-                        <option value="2">8 General</option>
-                        <option value="2">9 References</option>
-                    </select>
+                <li class="listyle2">
+                    <input type="text" name="category" class="input1" value="" readonly>
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="author" class="input2" value="<?php echo $author?>" disabled>
+                <li class="listyle2">
+                    <input type="text" name="author" class="input2" value="" readonly>
                 </li><br>
 
-                <li class="td2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" class="textarea2" disabled><?php echo $publisher?></textarea>
+                <li class="listyle2">
+                    <textarea name="publisher" rows="5" cols="35" wrap="soft" value="" readonly></textarea>
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="ISBN" class="input2" value="<?php echo $isbn?>" disabled>
+                <li class="listyle2">
+                    <input type="text" name="ISBN" class="input2" value="" readonly>
                 </li><br>
 
-                <li class="td2">
-                    <input type="text" name="copyrightyear" class="input5" value="<?php echo $copyrightYR?>" disabled>
+                <li class="listyle2">
+                    <input type="text" name="copyrightyear" class="input5" value="" readonly>
                 </li><br>
 
-                <li class="td2">
-                    <li><select class="select4" name="status" id="status">
-                        <option value="NA"></option>
-                        <option value="s1">New</option>
-                        <option value="s2">Old</option>      
-                        <option value="s3">Damage</option>
-                        <option value="s4">Lost</option>
-                        <option value="s5">Archive</option>
-                    </select></li>
+                <li class="listyle7">
+                    <input type="text" name="status" class="input6" value="" readonly>
                 </li><br>
-                <li class="td2">
-                    <input type="text" name="copyrightyear" class="input5">
+
+                <li class="listyle2">
+                    <input type="text" name="copies" class="input5" value="" readonly >
                 </li><br>
             </ul>
             <button class="back" type="submit">Back</button>
         </form>
     </div>
-
-    <footer>
-
-    </footer>
 </body>
