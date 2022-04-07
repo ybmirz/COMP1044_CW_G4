@@ -1,4 +1,4 @@
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 900px) {
 
 body {
 	background-image: url("../img/bg.png");
@@ -49,7 +49,7 @@ select{
 	font-size: 62.5%;
     width: 100%;
     position: fixed;
-    line-height: 65px;
+    line-height: 50px;
     text-align: center;
     z-index:999;
 }
@@ -146,8 +146,8 @@ select{
   background-color: #5A0000;
   border: none;
   color: white;
-  width: 120px;
-  height: 50px;
+  width: 70px;
+  height: 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -160,8 +160,8 @@ select{
   background-color: #0C343D;
   border: none;
   color: white;
-  width: 120px;
-  height: 50px;
+  width: 70px;
+  height: 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -174,8 +174,8 @@ select{
   background-color: #0C343D;
   border: none;
   color: white;
-  width: 250px;
-  height: 50px;
+  width: 70px;
+  height: 55px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -188,8 +188,8 @@ select{
   background-color: #0C343D;
   border: none;
   color: white;
-  width: 250px;
-  height: 50px;
+  width: 70px;
+  height: 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
