@@ -1,9 +1,10 @@
 <html>
 <head>
-    <title>Signup Page</title>
-    <link rel="icon" href="../img/logo.png" />
-    <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
-    <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
+    <title>Sign Up Page</title>
+    <link rel="icon" href="img/logo.png" />
+    <link rel="icon" href="img/bg.png" />
+    <link rel="stylesheet" type="text/css" href="pc.css" media="screen and (min-width: 900px)">
+    <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width: 900px)">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
@@ -13,8 +14,7 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
-                        <li class="title"><a href="">TITLE</a></li>
+                        <li><a href=""><img src="swamp-logo.svg" alt="title" class="logostyle"></a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
@@ -43,50 +43,58 @@
 
     <h1 align="center">Sign Up</h1>
 
-    <div class="center" align="center">
+    <div class="centersignup" align="center">
         <form id="signup" action=".php" method="get">
-
-            <ul>
-                <li class="listyle2">
-                    <input type="email" name="email" class="input1" placeholder="Email" required>
+           <ul>
+                <li class="listyle11">
+                    <input type="email" name="email" class="input7" placeholder="Email" required>
                 </li><br>
                 
-                <li class="listyle2">
-                    <input type="text" name="firstname" class="input1" placeholder="First Name" required>
+                <li class="listyle11">
+                    <input type="text" name="firstname" class="input7" placeholder="First Name" required>
                 </li><br>
                 
-                <li class="listyle2">
-                    <input type="text" name="lastname" class="input1" placeholder="Last Name" required>
+                <li class="listyle11">
+                    <input type="text" name="lastname" class="input7" placeholder="Last Name" required>
                 </li><br>   
                 
-                <li class="listyle2">
-                    <input type="password" name="password" class="input1" placeholder="Password" required>
+                <li class="listyle11">
+                    <input type="password" name="password" class="input7" placeholder="Password" required>
                 </li><br>  
                 
-                <li class="listyle2">
-                    <input type="text" name="address" class="input1" placeholder="Address" required>
+                <li class="listyle11">
+		    <input type="address" name="address" class="input7" placeholder="Address" required>
                 </li><br> 
                 
-                <li class="listyle2">
-                    <input type="tel" name="contact" class="input1" placeeholder="Contact Number" required>
+                <li class="listyle11">
+                    <input type="number" name="contact" class="input7" placeholder="Contact Number" required>
                 </li><br>                 
-                
-                <li class="listyle2">
-                    Gender<br>
-                    <label class="labelfont" for="male">Male</label>
-                    <input type="radio" id="male" name="gender" placeholder="Male" class="input3" checked="checked"><br>
-                    <label class="labelfont" for="female">Female</label>
-                    <input type="radio" id="female" name="gender" placeholder="Female" class="input3">
-                </li>                
 
-                <li class="listyle2">
-                	Type
+		<li class="listyle12">
+		<label for="gender"><b>Gender</b></label><br>
+                </li>
+
+                <li class="listyle13">
+  	            <label for="male">Male</label><nobr>
+                    <input type="radio" id="male" name="gender" value="male" checked="checked">
+                </li>
+                
+                <li class="listyle14">
+  	            <label for="female">Female</label><nobr>
+                    <input type="radio" id="female" name="gender" value="female">
+                </li><br>
+
+		<li class="listyle12">
+		<label for="type"><b>Type</b></label><br>
+                </li>
+
+                <li class="listyle15">
                     <select name="type" id="type">
                         <option value="student">Student</option>
-                        <option value="faculty">Faculty</option>
+                        <option value="teacher">Teacher</option>
                     </select>
-                </li><br>
-                
+                </li>
+
                 <script>
                     document.getElementById("type").onchange = function disableyear() {
                             if (this.options[this.selectedIndex].value == "faculty") {
@@ -97,18 +105,35 @@
                             }
                         }
                 </script>
+
+		<li class="listyle12">
+		<label for="year"><b>Year</b></label><br>
+                </li>
+
+                <li class="listyle13">
+  	            <label for="first">First</label><nobr>
+                    <input type="radio" id="first" name="tear" value="first" checked="checked">
+                </li>
                 
-                <li class="listyle2">
-                    Year<br>
-                    <label class="labelfont" for="male">First</label>
-                    <input type="radio" id="first" name="year" class="input3" checked="checked"><br>
-                    <label class="labelfont" for="female">Second</label>
-                    <input type="radio" id="second" name="year" class="input3">
-                    <label class="labelfont" for="female">Third</label>
-                    <input type="radio" id="third" name="year" class="input3">                    
-                </li>    
+                <li class="listyle14">
+  	            <label for="second">Second</label><nobr>
+                    <input type="radio" id="second" name="year" value="second"><br>
+                </li><br>
+
+                <li class="listyle13">
+  	            <label for="third">Third</label><nobr>
+                    <input type="radio" id="third" name="year" value="third">
+                </li><br>
+
+                <li class="listyle14">
+  	            <label for="fourth">Fourth</label><nobr>
+                    <input type="radio" id="third" name="year" value="third">
+                </li><br>               
+
             </ul>
-            <button type="submit">Login</button>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
+	<div class="padding"></padding>
 </body>
+
