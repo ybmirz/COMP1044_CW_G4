@@ -14,7 +14,7 @@
         font-family: "Quicksand", sans-serif;
         box-sizing: border-box;
         -webkit-text-size-adjust: 100%; 
-        background: url("../img/bg.png") no-repeat fixed, linear-gradient(#202c41, #131b28) fixed;
+        background: url("bg.png") no-repeat fixed, linear-gradient(#202c41, #131b28) fixed;
     }
 
     body{
@@ -80,6 +80,50 @@
         margin-top: 32.5%;
     }
 
+    .listyle10 {
+        margin-top: 10%;
+	float: left;
+        margin-left: 0%;
+    }
+
+    .listyle11 {
+        margin-top: 5%;
+	float: left;
+        margin-left: 0%;
+    }
+
+    .listyle12 {
+        margin-top: 5%;
+	float: left;
+        margin-left: 5%;
+        margin-right: 100%;
+    }
+
+    .listyle13 {
+        margin-top: 3%;
+	float: left;
+        margin-left: 15%;
+        margin-right: 10%;
+	font-weight: bolder;
+    }
+
+    .listyle14 {
+        margin-top: 3%;
+	float: left;
+        margin-left: 0%;
+	font-weight: bolder;
+    }
+
+    .listyle15 {
+	float: left;
+        margin-left: 15%;
+        margin-right: 5%;
+	padding: 6px;
+        font-size: 110%;
+        border-radius: 4px;
+	box-shadow: 2px 2px #888888;
+    }
+
     input { 
         float: left;
         margin-top: 10%;
@@ -125,6 +169,25 @@
         margin-top: 40%;
         text-align: center;
     }
+
+    .input7 {
+        width: 350px;
+        height: 45px;
+        padding: 15px;
+        margin-top: 2%;
+	border: 1px solid black;
+        box-shadow: 2px 2px #888888;
+    }
+
+    .input8 {
+        width: 450px;
+        height: 50px;
+        padding: 35px;
+	border: 1px solid black;
+        box-shadow: 2px 2px #888888;
+    }
+
+
 
     textarea { 
         float: left;
@@ -200,7 +263,7 @@
          display: block;
          margin-left: auto;
          margin-right: auto;
-         width: 50%;
+         width: 30%;
     }
 
     .center {
@@ -214,7 +277,22 @@
         transform: translateX(-50%);
         border: 2px solid black;
         background-color: white; 
-    }    
+    }
+
+    .centersignup {
+        position: absolute;
+        display: block;
+        overflow: auto;
+        width: 40%;
+        min-height: 25%;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 2px solid black;
+        background-color: white; 
+	border-style: solid;
+	border-color: #15f4ee;
+    }      
 
     .labelfont {
         font-size: 80%;
@@ -301,6 +379,21 @@
         padding: 0;
         background-color: #2da5c0;
     }
+
+    .affix2 {
+        width: 600px; 
+        height: 80px; 
+        margin-bottom: 3%; 
+	font-size: 38px;
+	border-radius: 4px;
+	margin:0 auto;	
+    }
+
+   .affix3 {
+	color: white;
+	padding: 15px 15px;
+	background-color: #003333;
+	}
 
     button { 
         width: 200px; 

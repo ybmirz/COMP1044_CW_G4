@@ -2,6 +2,7 @@
 <head>
     <title>Signup Page</title>
     <link rel="icon" href="logo.png" />
+    <link rel="icon" href="img/bg.png" />
     <link rel="stylesheet" type="text/css" href="pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width: 900px)">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +14,7 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li><a href=""><img src="swamp-logo.svg" alt="title" class="logostyle"></a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
@@ -41,17 +42,19 @@
     </script>
 
     <br><br><br><br>  
-    <div>
         <h1 align="center">Download Our PWA</h1> 
-        <img class="centerimage" src="../img/logo.png" alt="logo">
-        <h3 align="center">Book Swamp Semenyih</h3>
-    </div>
+	<div>
+             <img class="centerimage" src="logo.png" alt="logo">
+        </div>
+	<h1 align="center">Subscribe for weekly new book emails!</h1>
 
-    <div text-align="center">
-        <h1>Subscribe for weekly new book emails!</h1>
-	<input class="centerinput" type="email" placeholder="myemail@example.com" name="search">
-    </div>	    
+
+    <div class="affix2"> 
+	<form action="/action_page.php">
+		<input class="input8" type="email" placeholder="myemail@example.com" name="search"><nobr>
+                <input class="affix3" type="button" value="✓">
+	</form>       
+    </div>	
+
     
 </body>
-
-
