@@ -1,27 +1,32 @@
 <html>
 <head>
-	<title>Dashboard</title>
+	<title>Dashboard3</title>
 	<link rel="stylesheet" href="../css/Dashboard.css" media="screen and (min-width: 900px)">
-	<link rel="stylesheet" href="../css/DashboardMobile.css" media="screen and (max-width: 900px)">
+	<link rel="stylesheet" href="../css/Dashboard3Mobile.css" media="screen and (max-width: 900px)">
 </head>
 <body>
 
 <header>
-	<div class="header">
-		<nav class="nav1">
-		<img src="../img/logo.png" alt="Logo" width="60px" align="left">
-		</nav>
-	</div> <!--header-->
-</header>
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <ul>
+                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="">BookSwap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
         $(window).scroll(function () {
             if ($(document).scrollTop() > 50) {
-                $('.nav1').addClass('affix');
+                $('.nav').addClass('affix');
                 console.log("OK");
             } else {
-                $('.nav1').removeClass('affix');
+                $('.nav').removeClass('affix');
             }
         });
     </script>
@@ -34,20 +39,21 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
-				<form action="/action_page.php" class="option" style="padding-left: 60px;">
+				<div class="header2">
+				<form action="/action_page.php" class="option">
 					<select name="" id="">
 						<option value="">New</option>
 						<option value="">?</option>
 					</select>
 				</form>
-				<form action="/action_page.php" class="option" style="padding-left: 60px;">
+				<form action="/action_page.php" class="option">
 					<select name="" id="">
 						<option value="">Avaliable</option>
 						<option value="">?</option>
 					</select>
 				</form>
 				<div class="f2">
+				<div class="fr">
 					<ul>
 						<div class="navlink">
 							<li>
@@ -57,6 +63,7 @@
 							</li>
 						</div>
 					</ul>
+				</div>
 				</div><!--f2-->
 				</div><!--header-->
 				<br><br>
@@ -66,7 +73,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 					<div class="f2">
 						<ul>
 							<div class="navlink">
@@ -92,7 +99,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 				<div class="lp">
 					<button type="button" class="button1">Book</button>
 				</div> <!--lp-->
@@ -109,7 +116,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 				<div class="f2">
 					<div class="navlink">
 						<h2 class="cfr"> Status: New <span class="red"> Booked </span></h2>
@@ -123,7 +130,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 				<div class="lp">
 					<button type="button" class="button1">Book</button>
 				</div> <!--lp-->
@@ -140,7 +147,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 				<div class="lp">
 					<button type="button" class="button1">Book</button>
 				</div> <!--lp-->
@@ -157,7 +164,7 @@
 			
 			<div class="cyanborder">
 				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header">
+				<div class="header2">
 				<div class="lp">
 					<button type="button" class="button1">Book</button>
 				</div> <!--lp-->

@@ -1,41 +1,63 @@
 <html>
 <head>
-	<title>Dashboard</title>
+	<title>BookSwap</title>
 	<link rel="stylesheet" href="../css/Dashboard.css" media="screen and (min-width: 900px)">
 	<link rel="stylesheet" href="../css/DashboardMobile.css" media="screen and (max-width: 900px)">
 </head>
 <body>
 
 <header>
-	<div class="header">
-		<nav class="nav1">
-		<img src="../img/logo.png" alt="Logo" width="60px" style="padding-top: 10px; float:left;">
-			<ul class="navlink">
-				<li><a href="#" class="nav">Add Book</a></li>
-				<li><a href="#" class="nav">Library</a></li>
-				<li><a href="#" class="nav">Subscribe</a></li>
-				<li><a href="#" class="nav">Logout</a></li>
-			</ul>
-		</nav>
-	</div> <!--header-->
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <ul>
+                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="">BookSwap</a></li>
+                    </ul>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="">Add Book</a></li>
+                        <li><a href="">Library</a></li>
+                        <li><a href="">Subscribe</a></li>
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </div>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
+            </div>
+        </nav>
 </header>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
         $(window).scroll(function () {
             if ($(document).scrollTop() > 50) {
-                $('.nav1').addClass('affix');
+                $('.nav').addClass('affix');
                 console.log("OK");
             } else {
-                $('.nav1').removeClass('affix');
+                $('.nav').removeClass('affix');
             }
         });
     </script>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("mainListDiv");
+			if (x.style.display === "block") {
+			x.style.display = "none";
+			} else {
+			x.style.display = "block";
+			}
+		}
+	</script>
+	<script src="JS.js"></script>
 
 	<div class="border">
 		<h1 class="subheader"> Good Morning! </h1>
 		<br><br><br><br>
 		<div class="whiteborder">
+			<br>
 			<h2 class="wtl"> My books </h2>
 			<h2 class="wtll" style="color:gray;">(None. <a href="" style="color:purple;"> Donate some books</a>  now)</h2>
 			<h2 class="wl"> Library </h2>
@@ -56,24 +78,6 @@
 				</div>
 			</div> <!--header-->
 			<br>
-				
-			<div id="output_div"></div>
-			<script>
-				var output = "";
-				
-				output;
-				for ( var i=0; i < 3; i++) {
-					output += <div class="cyanborder">;
-					output += <h2 id="1" class="ctl"></h2>;
-					output += </div> // Cyanborder
-				}
-				output;
-				
-				document.getElementById("output_div").innerHTML = output;
-			</script>
-				<div class="cyanborder">
-				<h2 id="1" class="ctl"></h2>
-				</div> <!-- Cyanborder -->
 			
 			<br>
 			
