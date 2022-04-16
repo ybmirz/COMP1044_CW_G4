@@ -14,7 +14,8 @@
         font-family: "Quicksand", sans-serif;
         box-sizing: border-box;
         -webkit-text-size-adjust: 100%; 
-        background: url("../img/bg.png") no-repeat fixed, linear-gradient(#202c41, #131b28) fixed;
+        background:  linear-gradient(rgba(128, 199, 226, 0.7), rgba(31, 53, 71, 1)) fixed, url("../img/bg.png") top center no-repeat;
+        background-size: cover;
     }
 
     body{
