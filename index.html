@@ -1,24 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>COMP1044_CW_G4</title>
+    <title>Signup Page</title>
+    <link rel="icon" href="./img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="./css/pc.css" media="screen and (min-width: 900px)">
+    <link rel="stylesheet" type="text/css" href="./css/mobile.css" media="screen and (max-width: 900px)">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
-    <label for="Book_Information">Please enter a book's ID for it's information.</label>
-    <input type="text" id="book_id">
-    <button id="getInfo">Get Information</button>
-    <div id="result"></div>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <ul>
+                        <li><a href=""><img src="./img/logo.png" alt="title" class="logostyle"></a></li>
+                    </ul>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="">Add Book</a></li>
+                        <li><a href="">Library</a></li>
+                        <li><a href="">Subscribe</a></li>
+                        <li><a href="">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#getInfo').on('click', function() {
-                var book_id = $('#book_id').val();
-                window.location.replace('../php/displayBookInfo.php?book_id=' + book_id)
-            })
-        })
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
     </script>
+
+    <h1 align="center">Download Our PWA</h1> 
+    <div>
+        <img class="centerimage" src="./img/swamp-logo.svg" alt="logo">
+    </div>
+    <h1 align="center" style="padding-top: 0px;">Subscribe for weekly new book emails!</h1>
+
+
+    <div class="affix2" id="subscribe"> 
+	<form action="/action_page.php">
+		<input class="input8" type="email" placeholder="myemail@example.com" name="search"><nobr>
+        <input class="affix3" type="button" value="Submit">
+	</form>       
+    </div>	
+
+    
 </body>
-</html>
