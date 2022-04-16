@@ -263,7 +263,7 @@
          display: block;
          margin-left: auto;
          margin-right: auto;
-         width: 30%;
+         width: 20%;
     }
 
     .center {
@@ -416,5 +416,9 @@
     button.back {
         width: 90px; 
         height: 40px;
+    }
+	
+    .padding {
+	padding-bottom: 600px;
     }
 }
