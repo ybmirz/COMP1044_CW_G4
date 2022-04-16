@@ -1,8 +1,8 @@
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 900px) {
 
 	html,
 	body {
-        position: relative;
+		position: relative;
         height: auto;
         min-height: 100%;
         padding: 0;
@@ -11,7 +11,7 @@
         font-size: 62.5%;
         box-sizing: border-box;
         -webkit-text-size-adjust: 100%; 
-		background-image: url("../img/bg.png");
+		background-image: url("bg.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: top;
@@ -20,7 +20,7 @@
 	}
 	
 	body{
-        font-size: 200%;
+        font-size: 130%;
         vertical-align: middle;
         text-align: center;
     }
@@ -33,14 +33,10 @@
 		width: 150%;
 		margin: auto;
 	}
-
-	ul{
-		display: table-cell;
-		padding: 0;
-		margin-top: 8%;
-		list-style: none;
-		text-align: center; 
-	}
+	
+	.title {
+        margin-top: 10%;
+    }
 
 	.header2{
 		display: flex;
@@ -49,15 +45,6 @@
 		margin: auto;
 		align-items: center;
 	}
-	
-	.header3{
-		display: flex;
-		width: 80%;
-		height: 6vh;
-		margin: auto;
-		align-items: center;
-	}
-
 
 	.logo-container,
 	.navlink,
@@ -69,32 +56,34 @@
 	}
 	
 	.logostyle {
-        width: 120%;
-        height: 120%; 
+        width: 100%;
+        height: 90%; 
     }
-
-	.nav{
-		font-size: 62.5%;
-		width: 100%;
-		height: 55px;
-		position: fixed;
-		line-height: 65px;
-		text-align: center;
-		z-index:999;
-	}
-
-	.nav{
-		padding-top: 20px;
-		padding-bottom: 20px;
-		-webkit-transition: all 0.4s ease;
-		transition: all 0.4s ease;
-	}
-
-	.navlink{
+	
+	.navlink {
 		justify-content: space-around;
 		list-style: none;
 		float: right;
+		padding-bottom: 10px;
 	}
+	
+	.nav {   
+		overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 4.5%;
+        font-size: 62.5%;
+        line-height: 5%;
+        text-align: center;
+        z-index:999;
+		display: block;
+    }
+
+	.nav {
+        padding-bottom: 20px;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
 
 	.nav div.logo {
         float: left;
@@ -118,7 +107,7 @@
     }
     
     .nav div.logo a {
-        font-size: 135%;
+        font-size: 62.5%;
         text-decoration: none;
         color: #fff;
     }
@@ -128,34 +117,22 @@
     }
 
     .nav div.main_list {
-        float: right;
-        height: 45px;
+        position: absolute;
+		display: block;
     }
-
-    .nav div.main_list ul {
-        display: flex;
-        width: 100%;
-        height: 45px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    .nav div.main_list ul li {
+	
+	.nav div.main_list ul li {
         width: auto;
-        height: 45px;
-        padding-right: 3rem;
+        height: 20px;
+        padding-right: 30%;
+        white-space: nowrap
     }
 
     .nav div.main_list ul li a {
-        font-size: 2.4rem;
-        line-height: 45px;
+        font-size: 100%;
+        line-height: 30px;
         text-decoration: none;
         color: #fff;
-    }
-
-    .nav div.main_list ul li a:hover {
-        color: #000000;
     }
 
 	.nav{
@@ -176,7 +153,7 @@
 	}
 
 	.border{
-		top: 100px;
+		top: 50px;
 		width: 80%;
 		margin: auto;
 		position: relative;
@@ -245,8 +222,8 @@
 		background-color: #5A0000;
 		border: none;
 		color: white;
-		width: 120px;
-		height: 50px;
+		width: 70px;
+		height: 25px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
@@ -259,8 +236,8 @@
 		background-color: #0C343D;
 		border: none;
 		color: white;
-		width: 120px;
-		height: 50px;
+		width: 70px;
+		height: 25px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
@@ -273,8 +250,8 @@
 		background-color: #0C343D;
 		border: none;
 		color: white;
-		width: 250px;
-		height: 50px;
+		width: 70px;
+		height: 55px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
@@ -287,8 +264,8 @@
 		background-color: #0C343D;
 		border: none;
 		color: white;
-		width: 250px;
-		height: 50px;
+		width: 70px;
+		height: 40px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
@@ -298,6 +275,7 @@
 	}
 
 	.f2 {
+		padding-top: 30px;
 		flex: 2;
 	}
 
@@ -307,7 +285,7 @@
 
 	.option {
 		min-width:20px;
-		padding-left: 60px;
+		padding-left: 10px;
 	}
 
 
@@ -327,5 +305,38 @@
 		content: "";
 		clear: both;
 		display: table;
+	}
+
+	.nav #mainListDiv {
+		display: none;
+	}
+
+	.nav a.icon {
+		color: white;
+		padding: 14px 20px;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+	}
+
+	.nav a.icon {
+		width: 2%;
+        height: 5%;
+		background-image: url("../img/logo2.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.active {
+		background-color: #2da5c0;
+		color: white;
+	}
+	
+	.navlinks {
+		padding-top: 5px;
 	}
 }
