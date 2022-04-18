@@ -23,6 +23,14 @@ class User
         return $member_result;
     }
 
+    public function isAdmin($memberOWA) {
+        $query = "SELECT COUNT(1) AS Count FROM admin WHERE owa_fk_pk = ?";
+        $paramType = "s";
+        $paramArray = array($memberOWA);
+        $result = $this->ds->Select($query, $paramType, $paramArray);
+        return (number_format($result[0]["Count"]) > 0) ? True : False;
+    }
+
     public function processLogin($username, $password) {
         $passwordHash = sha1($password);
         $query = "SELECT * FROM account WHERE owa_fk_pk = ? AND SHA1_hashedpassword = ?";

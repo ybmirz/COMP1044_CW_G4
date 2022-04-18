@@ -16,11 +16,20 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
     if (!$isLoggedIn) {
         $_SESSION["message"] = "Invalid Credentials. Please check again.";
         $_SESSION["login_success"] = False;
-    } else {
-        $_SESSION["username"] = $username;
-        $_SESSION["message"] = "You are now logged in!";
-        $_SESSION["login_success"] = True;
+        header("Location: ../../dashboard.php");
+        exit();
     }
+    $_SESSION["username"] = $username;
+    $_SESSION["message"] = "You are now logged in!";
+    $_SESSION["login_success"] = True;
+    
+    // Getting user's firstname
+    $memberInfo = $user->getMemberByOWA($username)[0];
+    $_SESSION["firstName"] = $memberInfo["firstname"];
+
+    // Check if user is an admin
+    $_SESSION["admin"] = $user->isAdmin($username);
+
     header("Location: ../../dashboard.php");
     exit();
 }

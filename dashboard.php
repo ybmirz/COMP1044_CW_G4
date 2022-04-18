@@ -27,6 +27,9 @@ if (isset($_GET['logout'])) {
 				<div id="mainListDiv" class="main_list">
 					<ul class="navlinks">
 						<li><a href="">Add Book</a></li>
+						<li style="display: <?php /*When the user is an admin*/ echo $_SESSION["admin"] ? "block;" : "none;"?>">
+							<a href="">Manage User</a>
+						</li>
 						<li><a href="dashboard.php?logout=1">Logout</a></li>
 					</ul>
 				</div>
@@ -72,7 +75,7 @@ if (isset($_GET['logout'])) {
 	</script>
 
 	<div class="border">
-		<h1 class="subheader"> Good Morning! </h1>
+		<h1 class="subheader"> Good Morning<?php echo (isset($_SESSION["firstName"])) ? ", " . $_SESSION["firstName"] : "";?>! </h1>
 		<br><br><br><br>
 		<div class="whiteborder">
 			<h2 class="wtl"> My books </h2>
