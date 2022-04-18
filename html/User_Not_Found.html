@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Not Found</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <ul>
+                        <li><a href="../index.html"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="../index.html">BookSwap</a></li>
+                    </ul>
+                </div>
+                <div id="mainLislistyleiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a title="Add a new user." href="../php/manage_users.php">Manage Users</a></li>
+                        <li><a href="../dashboard.php?logout=1">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+    <div class="center" align="center">
+        <h2>Error: User Not Found</h4>
+        <p style="margin: 35px;">
+            An error has occured. The user you are looking for has either been banned or does not 
+            in the database anymore.
+        </p>
+        <a href="../dashboard.php">
+            <button style="margin-top: 0.5%;">Back to Dashboard</button>
+        </a>
+    </div>
+
+</body>
+</html>

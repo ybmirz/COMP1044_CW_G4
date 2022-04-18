@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-
 @media screen and (max-width: 900px) {
 
 	html,
@@ -15,7 +13,7 @@
         -webkit-text-size-adjust: 100%; 
 		background:  linear-gradient(rgba(128, 199, 226, 0.3), rgb(13, 22, 29)) fixed, url("../img/bg.png") top center fixed;
 		background-size: cover;
-		font-family: "Quicksand", sans-serif;
+		font-family: Furuta, "Trebuchet MS", Arial, sans-serif;
 	}
 	
 	body{

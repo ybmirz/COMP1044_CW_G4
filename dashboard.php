@@ -10,7 +10,8 @@ if (isset($_GET['logout'])) {
 <html>
 
 <head>
-	<title>Dashboard3</title>
+	<title>BookSwap Semenyih Dashboard</title>
+	<link rel="icon" href="./img/logo.png"/>
 	<link rel="stylesheet" href="./css/Dashboard.css" media="screen and (min-width: 900px)">
 	<link rel="stylesheet" href="./css/Dashboard3Mobile.css" media="screen and (max-width: 900px)">
 </head>
@@ -28,7 +29,7 @@ if (isset($_GET['logout'])) {
 					<ul class="navlinks">
 						<li><a href="">Add Book</a></li>
 						<li style="display: <?php /*When the user is an admin*/ echo $_SESSION["admin"] ? "block;" : "none;"?>">
-							<a href="./php/manage_user.php">Manage User</a>
+							<a href="./php/manage_users.php">Manage User</a>
 						</li>
 						<li><a href="dashboard.php?logout=1">Logout</a></li>
 					</ul>
@@ -39,7 +40,16 @@ if (isset($_GET['logout'])) {
 			</div>
 		</nav>
 	</header>
-
+	<script>
+        function myFunction() {
+            var x = document.getElementById("mainListDiv");
+            if (x.style.display === "block") {
+            x.style.display = "none";
+            } else {
+            x.style.display = "block";
+            }
+        }
+    </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>
 		$(window).scroll(function() {

@@ -14,16 +14,16 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
-                        <li class="title"><a href="">TITLE</a></li>
+                        <li><a href="../index.html"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="../index.html">BookSwap</a></li>
                     </ul>
                 </div>
                 <div id="mainLislistyleiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add Book</a></li>
-                        <li><a href="">Library</a></li>
-                        <li><a href="">Subscribe</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a title="Add a new user." href="">Add User</a></li>
+                        <li><a title="Ban this current user." href="">Ban User</a></li>
+                        <li><a href="../php/manage_users.php">Manage Users</a></li>
+                        <li><a href="../dashboard.php?logout=1">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
         });
     </script>
 
-    <h1 align="center">Manage User</h1>
+    <h1 align="center">Manage User - <?php echo $owa;?></h1>
 
     <div class="center" align="center">
         <form id="manageuser" action=".php" method="post">
@@ -57,15 +57,15 @@
             </ul>
             <ul>
                 <li class="listyle2">
-                    <input type="text" name="firstname" class="input1">
+                    <input id="firstName" type="text" name="firstname" class="input1">
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="lastname" class="input2">
+                    <input id="lastName" type="text" name="lastname" class="input2">
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="radio" id="female" name="gender" value="female" class="input3" checked="checked">
+                    <input type="radio" id="female" name="gender" value="female" class="input3" checked>
                     <li class="radio1"><label class="labelfont" for="female">Female</label></li>
                 </li>
                 
@@ -75,11 +75,11 @@
                 </li><br>
 
                 <li class="listyle2">
-                    <textarea name="address" rows="5" cols="35" wrap="soft"></textarea>
+                    <textarea id="address" name="address" rows="5" cols="35" wrap="soft"></textarea>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="contact" class="input2">
+                    <input type="text" id="contact" name="contact" class="input2">
                 </li><br>
 
                 <li class="listyle2">

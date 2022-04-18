@@ -302,6 +302,18 @@
 		background: #f1f1f1;
 	}
 
+	form.example button {
+		background-color: #0C343D;
+		border: none;
+		color: white;
+		width: 32.5px;
+		height: 32.5px;
+		text-align: center;
+		display: inline-block;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
 	form.example button:hover {
 		background: #0b7dda;
 	}
@@ -327,7 +339,6 @@
 	.nav a.icon {
 		width: 2%;
         height: 5%;
-		background-image: url("../img/logo2.png");
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		display: block;
