@@ -15,6 +15,14 @@ class User
         $this->ds = new Datasource();
     }
 
+    function getCredsByOWA($memberOWA) {
+        $query = "SELECT * FROM account WHERE owa_fk_pk = ?";
+        $paramType = "s";
+        $paramArray = array($memberOWA);
+        $member_result = $this->ds->Select($query, $paramType, $paramArray);
+        return $member_result;
+    }
+
     function getMemberByOWA($memberOWA) {
         $query = "SELECT * FROM member WHERE owa_pk = ?";
         $paramType = "s";
@@ -73,6 +81,53 @@ class User
 
         // return bool on operation success (insert to member and account has to be succesful)
         return $insertResult && $registerResult; 
+    }
+
+    public function updateMember($owa, $firstName, $lastName, $address, $contactNo, 
+    $gender, $accounttype, $year) {
+        // Updating to the parent information in member requires temp deletion from account
+        $accountInfo = $this->getCredsByOWA($owa)[0];
+        // delete creds
+        $deletion = $this->deleteCreds($owa);
+        // update member info
+        $updateQuery = "UPDATE `member` SET `firstname`=?,`lastname`=?,`gender`=?,`city`=?,`contactnumber`=?,`type_fk`=?,`year_level`=?,`status`='Active' WHERE `owa_pk` = ?";
+        $paramType = "ssssssss";
+        $paramArray = array($firstName,   $lastName, $gender, $address, $contactNo, $accounttype, $year, $owa);
+        $updateResult = False;
+        try {
+            $updateResult = $this->ds->execute($updateQuery, $paramType, $paramArray);
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+            $updateResult = False;
+        }
+
+        // reinsert account creds
+        $registerQuery = "INSERT INTO `account` (`owa_fk_pk`, `SHA1_hashedpassword`) VALUES (?, ?)";
+        $paramType = "ss";
+        $paramArray = array($accountInfo["owa_fk_pk"], $accountInfo["SHA1_hashedpassword"]);
+        $registerResult = False;
+        try {
+            $registerResult = $this->ds->execute($registerQuery, $paramType, $paramArray);
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+            $registerResult = False;
+        }
+
+        return $deletion && $updateResult && $registerResult;
+    }
+
+    public function deleteCreds($owa) {
+        $deleteQuery = "DELETE FROM account WHERE owa_fk_pk = ?";
+        $paramType = "s";
+        $paramArray = array($owa);
+        $deleteResult = False;
+        try
+        { $deleteResult = $this->ds->execute($deleteQuery, $paramType, $paramArray); }
+         catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+            $deleteResult = False;
+        }
+        return $deleteResult;
     }
 }
 

@@ -17,6 +17,13 @@ if (!empty($_SESSION["alert"])) {
     echo '</script>';
 }
 
+if (!empty($_SESSION["message"])) {
+    echo '<script>';
+    echo 'alert("' . $_SESSION["message"] . '");';
+    unset($_SESSION["message"]);
+    echo '</script>';
+}
+
 // if there's no GET for the php script, then load dashboard_users.php
 if (!isset($_GET["username"])) {
     include './dashboard_users.php';
@@ -29,7 +36,11 @@ $owa = $_GET["username"];
 $user = new User();
 $memberInfo = $user->getMemberByOWA($owa);
 
-if (empty($memberInfo)) {
+// adding a post variable in the case of a needed update
+$_SESSION["user_owa"] = $owa;
+
+// if creds are deleted, user is banned.
+if (empty($memberInfo) && empty($user->getCredsByOWA)) {
     include '../html/user_not_found.html';
     exit();
 } else
@@ -37,6 +48,7 @@ if (empty($memberInfo)) {
 
 include "../html/manage_user.html";
 echo '<script>';
+echo 'document.getElementById("user_owa").value = "' . $owa . '";';
 echo 'document.getElementById("firstName").value = "' . $memberInfo["firstname"] . '";';
 echo 'document.getElementById("lastName").value = "' . $memberInfo["lastname"] . '";';
 echo 'document.getElementById("' . (($memberInfo["gender"] == 'F') ? "female" : "male") . '").checked = true;';

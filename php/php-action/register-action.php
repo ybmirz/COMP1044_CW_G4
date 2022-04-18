@@ -75,7 +75,6 @@ if (!$success) {
     // Logs the user in
     // Check if user logged in
     $_SESSION["username"] = $owa;
-    $_SESSION["message"] = "You are now logged in!";
     $_SESSION["login_success"] = True;
     $_SESSION["admin"] = False;
 }

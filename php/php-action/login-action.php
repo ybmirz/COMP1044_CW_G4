@@ -20,7 +20,6 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
         exit();
     }
     $_SESSION["username"] = $username;
-    $_SESSION["message"] = "You are now logged in!";
     $_SESSION["login_success"] = True;
     
     // Getting user's firstname
