@@ -28,7 +28,7 @@ if (isset($_GET['logout'])) {
 					<ul class="navlinks">
 						<li><a href="">Add Book</a></li>
 						<li style="display: <?php /*When the user is an admin*/ echo $_SESSION["admin"] ? "block;" : "none;"?>">
-							<a href="">Manage User</a>
+							<a href="./php/manage_user.php">Manage User</a>
 						</li>
 						<li><a href="dashboard.php?logout=1">Logout</a></li>
 					</ul>
