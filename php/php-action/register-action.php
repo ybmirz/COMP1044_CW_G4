@@ -70,7 +70,7 @@ session_start();
 /// Successful registering or not
 
 if (!$success) {
-    $_SESSION["alert"] = "User Registration Failed. The username might have already existed. Please check again.";
+    $_SESSION["alert"] = "User Registration Failed. The username might have already existed or banned. Please check again.";
 } else {
     // Logs the user in
     // Check if user logged in

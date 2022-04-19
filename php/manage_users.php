@@ -48,6 +48,8 @@ if (empty($memberInfo) && empty($user->getCredsByOWA)) {
 
 include "../html/manage_user.html";
 echo '<script>';
+// bann user
+echo 'document.getElementById("ban_user").href = "./php-action/ban_user.php?username=' . $owa . '";';
 echo 'document.getElementById("user_owa").value = "' . $owa . '";';
 echo 'document.getElementById("firstName").value = "' . $memberInfo["firstname"] . '";';
 echo 'document.getElementById("lastName").value = "' . $memberInfo["lastname"] . '";';

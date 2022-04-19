@@ -1,3 +1,11 @@
+<?php 
+// Get all the users into an array
+use \bookSwap\User;
+require_once ('./classes/User.php');
+
+$user = new User();
+$memberList = $user->getAllUsers();
+?>
 <html>
 <head>
 	<title>Manage Users - Admin</title>
@@ -19,7 +27,7 @@
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add User</a></li>
+                        <li><a href="../dashboard.php">Library</a></li>
                         <li><a href="../dashboard.php?logout=1">Logout</a></li>
                     </ul>
                 </div>
@@ -71,96 +79,41 @@
 			</div><!--header-->
 			<br><br><br>
 		
-			<div class="cyanborder" style="height:150px;">
-			<br><br>
-				<div class="header3">
-				<h2> Soh Kar Seng </h2>
-					<div class="f2">
-						<div class="fr">
-							<ul>
-								<div class="navlink">
-									<li><button type="button" class="button1">Delete</button>
-										<button type="button" class="button2">Ban</button>
-									<br>
-										<button type="button" class="button3">Manage User Details</button>
-									</li>
+			<?php
+				foreach ($memberList as $member) {
+					// Adding an indicator if the user is banned.
+					$displayName = '<h2>['. $member["owa_pk"] . '] ' . $member["firstname"] . ' ' . $member["lastname"] .'</h2>';
+					$actionButton =  '<a href="./php-action/ban_user.php?username='. $member["owa_pk"] . '"><button type="button" class="button2">Ban</button></a>';
+					if ($member["status"] == 'Banned') {
+						$displayName = '<h2 style="color: #8b0000;">['. $member["owa_pk"] . '] ' . $member["firstname"] . ' ' . $member["lastname"] .'</h2><p>[Banned]</p>';
+						$actionButton = '<a href="./php-action/delete_user.php?username='. $member["owa_pk"] . '"><button type="button" class="button1">Unban</button></a>';
+					}
+
+					$box = '<div class="cyanborder" style="height:150px;">
+					<br><br>
+						<div class="header3">
+						' . $displayName . '
+							<div class="f2">
+								<div class="fr">
+									<ul>
+										<div class="navlink">
+											<li>
+											<a href="./php-action/delete_user.php?username='. $member["owa_pk"] . '"><button type="button" class="button1">Delete</button></a>
+												' . $actionButton . '
+											<br>
+												<a href="manage_users.php?username='. $member["owa_pk"] .'"><button type="button" class="button3">Manage User Details</button></a>
+											</li>
+										</div>
+									</ul>
 								</div>
-							</ul>
-						</div>
-					</div>
-				</div><!--header-->
-			<br>
-			</div> <!-- Cyanborder -->
-			
-			<br>
-			
-			<div class="cyanborder" style="height:150px;">
-			<br><br>
-				<div class="header3">
-				<h2> Soh Kar Seng </h2>
-					<div class="f2">
-						<div class="fr">
-							<ul>
-								<div class="navlink">
-									<li><button type="button" class="button1">Delete</button>
-										<button type="button" class="button2">Ban</button>
-									<br>
-										<button type="button" class="button3">Manage User Details</button>
-									</li>
-								</div>
-							</ul>
-						</div>
-					</div>
+							</div>
+						</div><!--header-->
 					<br>
-				</div><!--header-->
-				<br>
-			</div> <!-- Cyanborder -->
-			
-			<br>
-			
-			<div class="cyanborder" style="height:150px;">
-			<br><br>
-				<div class="header3">
-				<h2> Soh Kar Seng </h2>
-					<div class="f2">
-						<div class="fr">
-							<ul>
-								<div class="navlink">
-									<li><button type="button" class="button1">Delete</button>
-									<button type="button" class="button2">Ban</button>
-									<br>
-									<button type="button" class="button3">Manage User Details</button>
-									</li>
-								</div>
-							</ul>
-						</div>
-					</div>
-				</div><!--header-->
-			</div> <!-- Cyanborder -->
-			
-			<br>
-			
-			<div class="cyanborder" style="height:150px;">
-			<br><br>
-				<div class="header3">
-				<h2> Soh Kar Seng </h2>
-					<div class="f2">
-						<div class="fr">
-							<ul>
-								<div class="navlink">
-									<li><button type="button" class="button1">Delete</button>
-										<button type="button" class="button2">Ban</button>
-									<br>
-										<button type="button" class="button3">Manage User Details</button>
-									</li>
-								</div>
-							</ul>
-						</div>
-					</div>
-				</div><!--header-->
-			</div> <!-- Cyanborder -->
-			
-			<br>
+					</div> <!-- Cyanborder -->
+					<br>';
+					echo $box;
+				}
+			?>
 			
 		</div> <!-- whiteborder -->
 	</div> <!-- border -->

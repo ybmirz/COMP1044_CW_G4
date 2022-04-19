@@ -31,6 +31,12 @@ class User
         return $member_result;
     }
 
+    public function getAllUsers() {
+        $query = "SELECT * FROM member";
+        $members = $this->ds->Select($query);
+        return $members;
+    }
+
     public function isAdmin($memberOWA) {
         $query = "SELECT COUNT(1) AS Count FROM admin WHERE owa_fk_pk = ?";
         $paramType = "s";
@@ -128,6 +134,46 @@ class User
             $deleteResult = False;
         }
         return $deleteResult;
+    }
+
+    public function banMember($owa) {
+        // When a user is banned, their credentials is deleted and their
+        // member record exists with the status being banned. Hence a banned user cannot register under the same owa.
+        $this->deleteCreds($owa);
+        // update member info
+        $updateQuery = "UPDATE `member` SET `status`='Banned' WHERE `owa_pk` = ?";
+        $paramType = "s";
+        $paramArray = array($owa);
+        $updateResult = False;
+        try {
+            $updateResult = $this->ds->execute($updateQuery, $paramType, $paramArray);
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+            $updateResult = False;
+        }
+        return $updateResult;
+    }
+
+    public function deleteMember($owa) {
+        // When a user is unbanned, their member record that states banned is deleted, hence they are able to
+        // register once more.
+
+        // Deletion checks for the user's creds first, if found, will delete
+        if (!empty($this->getCredsByOWA($owa)[0])) {
+            $this->deleteCreds($owa);
+        }
+
+        $deletionQuery = "DELETE FROM `member` WHERE `owa_pk` = ?";
+        $paramType = "s";
+        $paramArray = array($owa);
+        $deletionResult = False;
+        try {
+            $deletionResult = $this->ds->execute($deletionQuery, $paramType, $paramArray);
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+            $deletionResult = False;
+        }
+        return $deletionResult;
     }
 }
 
