@@ -50,7 +50,7 @@ echo '</script>';
 				</div>
 				<div id="mainListDiv" class="main_list">
 					<ul class="navlinks">
-						<li><a href="">Add Book</a></li>
+						<li><a href="./php/add_book.php">Add Book</a></li>
 						<li style="display: <?php /*When the user is an admin*/ echo $_SESSION["admin"] ? "block list-item;" : "none;" ?>">
 							<a href="./php/manage_users.php">Manage Users</a>
 						</li>
