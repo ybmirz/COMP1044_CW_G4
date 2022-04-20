@@ -25,6 +25,7 @@ class Book
         return $this->ds->Select($query);
     }
 
+    // returns number of copies 
     public function getCopiesByInfoId($book_info_Id)
     {
         $query = "SELECT Count(0) As Count FROM book WHERE book_information_id_fk = ?";
@@ -34,6 +35,7 @@ class Book
         return $count["Count"];
     }
 
+    // Book table
     public function getBookById($book_id)
     {
         $getQuery = "SELECT * FROM book WHERE id_pk = ?";
@@ -176,5 +178,18 @@ class Book
         $paramType = "sis";
         $success = $this->ds->execute($query,$paramType,$paramArray);
         return $success;
+    }
+
+
+    // get category information
+    public function getCategory($id) {
+        $getQuery = "SELECT * FROM category WHERE id_pk = ?";
+        $paramArray = array($id);
+        $paramType = "s";
+        $result = $this->ds->Select($getQuery, $paramType, $paramArray);
+        if (empty($result))
+            return False;
+        else
+            return $result[0];
     }
 }

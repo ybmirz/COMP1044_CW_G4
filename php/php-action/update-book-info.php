@@ -3,7 +3,6 @@ use \bookSwap\Book;
 session_start();
 
 echo '<script>';
-/*
 if (!empty($_SESSION["alert"])) {
 	echo 'alert("' . $_SESSION["alert"] . '");';
 	unset($_SESSION["alert"]);
@@ -20,7 +19,6 @@ if (!empty($_SESSION["alert"])) {
 		echo 'window.location.href = "../../dashboard.php";';
 	} 
 }
-*/
 echo '</script>';
 
 // opening the page without form
