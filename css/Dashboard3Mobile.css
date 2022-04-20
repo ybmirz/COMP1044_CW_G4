@@ -336,4 +336,14 @@
 	.navlinks {
 		padding-top: 5px;
 	}
+
+	a.nostyle:link {
+		text-decoration: inherit;
+		color: inherit;
+	}
+	
+	a.nostyle:visited {
+		text-decoration: inherit;
+		color: inherit;
+	}
 }

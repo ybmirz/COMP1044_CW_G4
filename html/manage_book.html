@@ -51,6 +51,7 @@
                 <li class="listyle4"><label for="publisher">Publisher</label></li><br>
                 <li class="listyle5" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
                 <li class="listyle5"><label for="copyright year">Copyright Year</label></li><br>
+                <li class="listyle5" style="margin-left: 15%;"><label for="availability">Availability</label></li><br>
                 <li class="listyle5" style="margin-left: 15%;"><label for="status">Status</label></li><br>
             </ul>
             <ul>
@@ -91,10 +92,18 @@
                 </li><br>
 
                 <li class="listyle2">
+                    <li><select class="selectstatus" name="availability" id="status">
+                        <option id="a1" value="a1">Available</option>  
+                        <option id="a2" value="a2">Lost</option>
+                        <option id="a3" value="a3">Archived</option>
+                    </select></li>
+                </li><br>
+
+                <li class="listyle2">
                     <li><select class="selectstatus" name="status" id="status">
-                        <option id="s1" value="s1">Available</option>  
-                        <option id="s2" value="s2">Lost</option>
-                        <option id="s3" value="s3">Archived</option>
+                        <option id="s1" value="s1">New</option>  
+                        <option id="s2" value="s2">Damaged</option>
+                        <option id="s3" value="s3">Old</option>
                     </select></li>
                 </li><br>
             </ul>

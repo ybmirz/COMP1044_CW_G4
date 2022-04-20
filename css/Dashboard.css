@@ -214,6 +214,7 @@
 	.ctl {
 		text-align: left;
 		padding-left: 3%;
+		padding-top: 1.5%;
 	}
 
 	.cfr {
@@ -355,5 +356,17 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+	}
+
+	a.nostyle:link {
+		text-decoration: inherit;
+		color: inherit;
+		cursor: auto;
+	}
+	
+	a.nostyle:visited {
+		text-decoration: inherit;
+		color: inherit;
+		cursor: auto;
 	}
 }

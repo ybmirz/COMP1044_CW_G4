@@ -42,15 +42,27 @@ $publisherName = $publisher[0];
 $publisherAddress = $publisher[1];
 $ISBN = filter_var($_POST["ISBN"], FILTER_VALIDATE_INT);
 $year = filter_var($_POST["copyrightyear"], FILTER_VALIDATE_INT);
-$available;
+$status;
 switch ($_POST["status"]) {
     case 's1':
-        $available = 'Available';
+        $status = 'New';
         break;
     case 's2':
-        $available = 'Lost';
+        $status = 'Damaged';
         break;
     case 's3':
+        $status = 'Old';
+        break;
+}
+$available;
+switch ($_POST["availability"]) {
+    case 'a1':
+        $available = 'Available';
+        break;
+    case 'a2':
+        $available = 'Lost';
+        break;
+    case 'a3':
         $available = 'Archived';
         break;
 }
@@ -58,7 +70,7 @@ switch ($_POST["status"]) {
 require_once ('../classes/Book.php');
 $bookDs = new Book();
 
-if (!($title && $category && $author && $publisherName && $publisherAddress && $ISBN && $year && $available)) {
+if (!($title && $category && $author && $publisherName && $publisherAddress && $ISBN && $year && $available && $status)) {
     echo '<script>';
     echo 'alert("Server side validation failed. Please check information again.");';
     echo 'window.location.href = "manage_book.php?book_id='.$book_id.'";';
@@ -77,7 +89,7 @@ if (!$publisherData) { // if no prev publisher info,, add publisher
 $bookInfoResult = $bookDs->updateBookInformation($book_info_id, $title, $category, $author, $publisherData["id_pk"], $ISBN, $year);
 
 // update availability in book table
-$bookStatusUpdateResult = $bookDs->updateBookAvailabilty($book_id, $owa, $available);
+$bookStatusUpdateResult = $bookDs->updateBookRecord($book_id, $owa, $available, $status);
 
 // once done 
 if (!($bookInfoResult && $bookStatusUpdateResult)) { // failed editing

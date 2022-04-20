@@ -1,4 +1,7 @@
 <?php
+
+use \bookSwap\Book;
+
 session_start();
 // Logout clicked and wanting to log out
 if (isset($_GET['logout'])) {
@@ -28,6 +31,11 @@ if (!empty($_SESSION["alert"])) {
 	}
 }
 echo '</script>';
+
+// getting all books in the library
+require_once('./php/classes/Book.php');
+$bookDs = new Book();
+$books = $bookDs->getAllBooks();
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,41 +101,62 @@ echo '</script>';
 		<h1 class="subheader"> Good Morning<?php echo (isset($_SESSION["firstName"])) ? ", " . $_SESSION["firstName"] : ""; ?>! </h1>
 		<br><br><br><br>
 		<div class="whiteborder">
+			<br>
 			<h2 class="wtl"> My books </h2>
+			<?php
+			$none = True;
+			foreach ($books as $book) {
+				if ($book["owner_owa_fk"] == $_SESSION["username"]) {
+					// getting book information
+					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
 
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<form action="/action_page.php" class="option">
-						<select name="" id="">
-							<option value="">New</option>
-							<option value="">?</option>
-						</select>
-					</form>
-					<form action="/action_page.php" class="option">
-						<select name="" id="">
-							<option value="">Avaliable</option>
-							<option value="">?</option>
-						</select>
-					</form>
-					<div class="f2">
-						<div class="fr">
-							<ul>
-								<div class="navlink">
-									<li>
-										<button type="button" class="button4">Update Book</button>
-										<br>
-										<button type="button" class="button4">Delete Book</button>
-									</li>
-								</div>
-							</ul>
+					$status = array("New" => "", "Damaged" => "", "Old"=>"");
+					$available = array("Available" => "", "Lost" => "", "Archived" => "");
+
+					$status[$book["status"]] = 'selected';
+					$available[$book["availability"]] = 'selected';
+
+					$div = <<<html
+						<div class="cyanborder"">
+					<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
+					<div class="header2">
+						<form action="./php/manage_book.php?book_id={$book["id_pk"]}" class="option" id="statusForm" method="post">
+							<select name="status" id="status" class="option">
+								<option value="s1"{$status["New"]}>New</option>
+								<option value="s2"{$status["Damaged"]}>Damaged</option>
+								<option value="s3"{$status["Old"]}>Old</option>
+							</select>
+							<select name="availability" id="availability" class="option">
+								<option value="a1"{$available["Available"]}>Available</option>
+								<option value="a2"{$available["Lost"]}>Lost</option>
+								<option value="a3"{$available["Archived"]}>Archived</option>
+							</select>
+						</form>
+						<div class="f2">
+							<div class="fr">
+								<ul>
+									<div class="navlink">
+										<li>
+											<button type="submit" class="button4" form="statusForm">Update Book</button>
+											<br>
+											<button type="button" class="button4">Delete Book</button>
+										</li>
+									</div>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
-				<br><br>
-			</div> <!-- Cyanborder -->
+					<br><br>
+				</div> 
+				html;
+
+					echo $div;
+					$none = False;
+				}
+			}
+			if ($none)
+				echo '<h2 class="wtll" style="color:gray;">(None. <a href="./php/add_book.php" style="color:purple;"> Donate some books</a>  now)</h2>';
+			?>
 
 			<h2 class="wtl"> Borrowed books </h2>
 
@@ -179,89 +208,10 @@ echo '</script>';
 			</div> <!-- Cyanborder -->
 			<br>
 
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<div class="f2">
-						<div class="navlink">
-							<h2 class="cfr"> Status: New <span class="red"> Booked </span></h2>
-						</div>
-						<!--navlink-->
-					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
-				<br>
-			</div> <!-- Cyanborder -->
-
-			<br>
-
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<div class="lp">
-						<button type="button" class="button1">Book</button>
-					</div>
-					<!--lp-->
-					<div class="f2">
-						<div class="navlink">
-							<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
-						</div>
-						<!--navlink-->
-					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
-				<br>
-			</div> <!-- Cyanborder -->
-
-			<br>
-
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<div class="lp">
-						<button type="button" class="button1">Book</button>
-					</div>
-					<!--lp-->
-					<div class="f2">
-						<div class="navlink">
-							<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
-						</div>
-						<!--navlink-->
-					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
-				<br>
-			</div> <!-- Cyanborder -->
-
-			<br>
-
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<div class="lp">
-						<button type="button" class="button1">Book</button>
-					</div>
-					<!--lp-->
-					<div class="f2">
-						<div class="navlink">
-							<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
-						</div>
-						<!--navlink-->
-					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
-				<br>
-			</div> <!-- Cyanborder -->
-
-			<br>
-
 		</div> <!-- whiteborder -->
 	</div> <!-- border -->
-
+	<script>
+	</script>
 </body>
 
 </html>

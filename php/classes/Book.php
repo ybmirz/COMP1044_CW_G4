@@ -171,11 +171,11 @@ class Book
         return $success;
     }
 
-    // update availability in book table
-    public function updateBookAvailabilty($book_id, $owa, $availability) {
-        $query = "UPDATE book SET `availability` = ? WHERE id_pk = ? AND owner_owa_fk = ?";
-        $paramArray = array($availability ,$book_id, $owa);
-        $paramType = "sis";
+    // update record in book table
+    public function updateBookRecord($book_id, $owa, $availability, $status) {
+        $query = "UPDATE book SET `availability` = ?,`status`=? WHERE id_pk = ? AND owner_owa_fk = ?";
+        $paramArray = array($availability, $status ,$book_id, $owa);
+        $paramType = "ssis";
         $success = $this->ds->execute($query,$paramType,$paramArray);
         return $success;
     }
