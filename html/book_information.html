@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Book Information</title>
+    <title>Book Information - BookSwap Semenyih</title>
     <link rel="icon" href="../img/logo.png" />
     <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
@@ -13,16 +13,14 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
-                        <li class="title"><a href="">TITLE</a></li>
+                        <li><a href="../dashboard.php"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="../dashboard.php">BookSwap</a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add Book</a></li>
-                        <li><a href="">Library</a></li>
-                        <li><a href="">Subscribe</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a href="../dashboard.php">Library</a></li>
+                        <li><a href="../dashboard.php?logout=1">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,10 +39,10 @@
         });
     </script>
 
-    <h1 align="center">get book title & info from database</h1>
+    <h1 align="center">Book Title Here</h1>
 
     <div class="center" align="center">
-        <form id="bookinfo" action="displaybookInfo.php" method="post">
+        <form id="bookinfo">
             <ul>
                 <li class="listyle9"><label for="category">Category</label></li><br>
                 <li class="listyle9"><label for="author">Author</label></li><br>
@@ -83,7 +81,7 @@
                     <input type="text" name="copies" class="input5" value="" readonly >
                 </li><br>
             </ul>
-            <button class="back" type="submit">Back</button>
+            <button class="back" type="submit" name="">Back</button>
         </form>
     </div>
 </body>

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Manage Book</title>
+    <title>Manage Book - BookSwap Semenyih</title>
     <link rel="icon" href="../img/logo.png" />
     <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
@@ -14,16 +14,14 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
-                        <li class="title"><a href="">TITLE</a></li>
+                        <li><a href="../dashboard.php"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="../dashboard.php">BookSwap</a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add Book</a></li>
-                        <li><a href="">Library</a></li>
-                        <li><a href="">Subscribe</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a href="../dashboard.php">Library</a></li>
+                        <li><a href="../dashboard.php?logout=1">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,10 +40,10 @@
         });
     </script>
 
-    <h1 align="center">Manage Book</h1>
+    <h1 align="center">Edit Book #<span id="display_id"></span> Information</h1>
 
     <div class="center" align="center">
-        <form id="managebook" action=".php" method="post">
+        <form id="managebook" action="./php-action/update-book-info.php" method="post" onsubmit="return validate();">
             <ul>
                 <li class="listyle3"><label for="booktitle">Book Title</label></li><br>
                 <li class="listyle3"><label for="category">Category</label></li><br>
@@ -57,7 +55,9 @@
             </ul>
             <ul>
                 <li class="listyle2">
-                    <input type="text" name="booktitle" class="input1" value="">
+                    <input style="display: none;" name="book_id" id="book_id" value="">
+                    <input style="display: none;" name="book_info_id" id="book_info_id" value="">
+                    <input id="booktitle" type="text" name="booktitle" class="input1" value="">
                 </li><br>
 
                 <li class="listyle2">
@@ -75,30 +75,62 @@
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="author" class="input2" value="">
+                    <input id="author" type="text" name="author" class="input2" value="">
                 </li><br>
 
                 <li class="listyle2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" value=""></textarea>
+                    <textarea id="publisher" name="publisher" rows="5" cols="35" wrap="soft" value=""></textarea>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="ISBN" class="input2" value="">
+                    <input id="isbn" type="text" name="ISBN" class="input2" value="">
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="copyrightyear" class="input5" value="">
+                    <input id="year" type="text" name="copyrightyear" class="input5" value="">
                 </li><br>
 
                 <li class="listyle2">
                     <li><select class="selectstatus" name="status" id="status">
-                        <option value="s1">Available</option>  
-                        <option value="s2">Lost</option>
-                        <option value="s3">Archived</option>
+                        <option id="s1" value="s1">Available</option>  
+                        <option id="s2" value="s2">Lost</option>
+                        <option id="s3" value="s3">Archived</option>
                     </select></li>
                 </li><br>
             </ul>
-            <button type="submit">Donate My Book</button>
+            <button type="submit" id="submit" name="updateBookInfo">Update My Book</button>
         </form>
     </div>
+
+    <!--Validate the form-->
+    <script>
+        function validate() {
+            // Checks ISBN needs exactly 13 numbers
+            validation = true;
+            let isbn = document.getElementById("isbn").value;
+            var msg = "Validation Error: \n";
+            if (isNaN(isbn) || isbn.length != 13){
+                msg += "ISBN must be a number and of ISBN-13 format.\n";
+                validation = false;
+            }
+
+            // Checks copyright year needs to be 4 numbers and a number
+            let year = document.getElementById("year").value;
+            if (isNaN(year) || year.length != 4){
+                msg += "Copyright year has to be of a YYYY format.\n";
+                validation = false;
+            }
+
+            // Checks Publisher needs to atleast have one comma
+            let publisher = document.getElementById("publisher").value;
+            if (!publisher.includes(',')) {
+                msg += "Publisher information needs to be in the format: \'Publisher Name , Publisher Address\'\n";
+                validation = false
+            }
+
+            if (!validation)
+                alert(msg);
+            return validation;
+        }
+    </script>
 </body>

@@ -61,16 +61,16 @@ if (isset($_POST["bookAddition"])) {
 
     require_once('./classes/Book.php');
     $bookDs = new Book();
-    $publisherData = $bookDs->getPublisher($publisherName);
+    $publisherData = $bookDs->getPublisherbyName($publisherName);
     if (!$publisherData) { // if no prev publisher info,, add publisher
         $bookDs->addPublisher($publisherName, $publisherAddress);
-        $publisherData = $bookDs->getPublisher($publisherName);
+        $publisherData = $bookDs->getPublisherbyName($publisherName);
     }
 
     // Add the book information
     $bookDs->addBook($title, $category, $publisherData["id_pk"], $author, $ISBN, $year);
     // get book data after adding for the new id
-    $addedBook = $bookDs->getBookByTitle($title);
+    $addedBook = $bookDs->getBookInfoByTitle($title);
     if (!$addedBook) { // false; error adding
         echo '<script>';
         echo 'alert("Book addition error. Something went wrong.");';

@@ -177,7 +177,6 @@ echo '</script>';
 				<!--header-->
 				<br>
 			</div> <!-- Cyanborder -->
-
 			<br>
 
 			<div class="cyanborder">
