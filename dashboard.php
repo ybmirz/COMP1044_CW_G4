@@ -139,7 +139,7 @@ $books = $bookDs->getAllBooks();
 										<li>
 											<button type="submit" class="button4" form="statusForm">Update Book</button>
 											<br>
-											<button type="button" class="button4">Delete Book</button>
+											<a href="./php/php-action/delete_book.php?book_id={$book["id_pk"]}"><button type="button" class="button4">Delete Book</button></a>
 										</li>
 									</div>
 								</ul>
