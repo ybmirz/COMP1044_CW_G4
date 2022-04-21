@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Book Information</title>
+    <title>Book Information - BookSwap Semenyih</title>
     <link rel="icon" href="../img/logo.png" />
     <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
@@ -13,16 +13,14 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
-                        <li class="title"><a href="">TITLE</a></li>
+                        <li><a href="../dashboard.php"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li class="title"><a href="../dashboard.php">BookSwap</a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add Book</a></li>
-                        <li><a href="">Library</a></li>
-                        <li><a href="">Subscribe</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a href="../dashboard.php">Library</a></li>
+                        <li><a href="../dashboard.php?logout=1">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,49 +39,45 @@
         });
     </script>
 
-    <h1 align="center">get book title & info from database</h1>
+    <h1 align="center" id="bookTitle">Book Title Here</h1>
 
     <div class="center" align="center">
-        <form id="bookinfo" action="displaybookInfo.php" method="post">
+        <form id="bookinfo">
             <ul>
                 <li class="listyle9"><label for="category">Category</label></li><br>
                 <li class="listyle9"><label for="author">Author</label></li><br>
                 <li class="listyle4"><label for="publisher">Publisher</label></li><br>
                 <li class="listyle9" style="margin-left: 40%; margin-top: 72%;"><label for="ISBN">ISBN</label></li><br>
-                <li class="listyle9"><label for="copyright year">Copyright Year</label></li><br>
-                <li class="listyle9"><label for="status">Status</label></li><br>
+                <li class="listyle9"><label for="copyright year">Copyright Year</label></li><br>                
                 <li class="listyle9" style="margin-left: 15%;"><label for="Copies">Copies</label></li><br>
             </ul>
             <ul>
                 <li class="listyle2">
-                    <input type="text" name="category" class="input1" value="" readonly>
+                    <input id="category" type="text" name="category" class="input1" value="" readonly>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="author" class="input2" value="" readonly>
+                    <input id="author" type="text" name="author" class="input2" value="" readonly>
                 </li><br>
 
                 <li class="listyle2">
-                    <textarea name="publisher" rows="5" cols="35" wrap="soft" value="" readonly></textarea>
+                    <textarea id="publisher" name="publisher" rows="5" cols="35" wrap="soft" value="" readonly></textarea>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="ISBN" class="input2" value="" readonly>
+                    <input id="isbn" type="text" name="ISBN" class="input2" value="" readonly>
                 </li><br>
 
                 <li class="listyle2">
-                    <input type="text" name="copyrightyear" class="input5" value="" readonly>
+                    <input id="year" type="text" name="copyrightyear" class="input5" value="" readonly>
                 </li><br>
 
                 <li class="listyle7">
-                    <input type="text" name="status" class="input6" value="" readonly>
+                    <input id="copies" type="text" name="copies" class="input6" value="" readonly>
                 </li><br>
 
-                <li class="listyle2">
-                    <input type="text" name="copies" class="input5" value="" readonly >
-                </li><br>
             </ul>
-            <button class="back" type="submit">Back</button>
+            <a href="../dashboard.php"><button class="back" type="submit">Back</button></a>
         </form>
     </div>
 </body>

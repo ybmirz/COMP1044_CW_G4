@@ -11,11 +11,8 @@
         font-size: 62.5%;
         box-sizing: border-box;
         -webkit-text-size-adjust: 100%; 
-		background-image: url("../img/bg.png");
-		background-repeat: no-repeat;
+		background:  linear-gradient(rgba(128, 199, 226, 0.3), rgb(13, 22, 29)) fixed, url("../img/bg.png") top center fixed;
 		background-size: cover;
-		background-position: top;
-		background-attachment: fixed;
 		font-family: Furuta, "Trebuchet MS", Arial, sans-serif;
 	}
 	
@@ -105,8 +102,7 @@
         display: flex;
         width: 100%;
         height: 45px;
-        padding-top: 0.45rem;
-        padding-left: 1rem;
+        padding-left: 3rem;
         margin: 0;
         list-style: none;
     }
@@ -218,6 +214,7 @@
 	.ctl {
 		text-align: left;
 		padding-left: 3%;
+		padding-top: 1.5%;
 	}
 
 	.cfr {
@@ -317,6 +314,19 @@
 		border: 1px solid grey;
 		width: 80%;
 		background: #f1f1f1;
+		display: inline;
+	}
+
+	form.example button {
+		background-color: #0C343D;
+		border: none;
+		color: white;
+		width: 32.5px;
+		height: 32.5px;
+		text-align: center;
+		display: inline-block;
+		font-size: 16px;
+		cursor: pointer;
 	}
 
 	form.example button:hover {
@@ -327,5 +337,42 @@
 		content: "";
 		clear: both;
 		display: table;
+	}
+
+	.nav a.icon {
+		color: white;
+		padding: 14px 20px;
+		text-decoration: none;
+		font-size: 17px;
+		display: none;
+	}
+
+	.nav a.icon {
+		width: 2%;
+        height: 5%;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	a.nostyle:link {
+		text-decoration: inherit;
+		color: inherit;
+		cursor: auto;
+	}
+	
+	a.nostyle:visited {
+		text-decoration: inherit;
+		color: inherit;
+		cursor: auto;
+	}
+
+	iframe {
+		max-width: 100% !important;
+        width: 80% !important;
+        height: 100% !important;
 	}
 }

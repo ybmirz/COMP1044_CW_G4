@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Sign Up Page</title>
+    <title>BookSwap Semenyih - Register</title>
     <link rel="icon" href="../img/logo.png" />
     <link rel="stylesheet" type="text/css" href="../css/pc.css" media="screen and (min-width: 900px)">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width: 900px)">
@@ -13,15 +13,14 @@
             <div class="container">
                 <div class="logo">
                     <ul>
-                        <li><a href=""><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
+                        <li><a href="../index.html"><img src="../img/logo.png" alt="title" class="logostyle"></a></li>
                     </ul>
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
-                        <li><a href="">Add Book</a></li>
-                        <li><a href="">Library</a></li>
-                        <li><a href="">Subscribe</a></li>
-                        <li><a href="">Login</a></li>
+                        <li><a href="../dashboard.php">Library</a></li>
+                        <li><a href="../php/load.php?q=register">Register</a></li>
+                        <li><a href="../php/load.php?q=login">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,10 +42,10 @@
     <h1 align="center">Sign Up</h1>
 
     <div class="centersignup" align="center">
-        <form id="signup" action=".php" method="get">
+        <form id="signup" action="../php/php-action/register-action.php" method="post">
            <ul>
                 <li class="listyle11">
-                    <input type="email" name="email" class="input7" placeholder="Email" required>
+                    <input type="text" name="owa" class="input7" placeholder="OWA" required>
                 </li><br>
                 
                 <li class="listyle11">
@@ -88,7 +87,7 @@
                 </li>
 
                 <li class="listyle15">
-                    <select name="type" id="type" onchange="disableyear('yearStudentSelect', this)">
+                    <select name="account_type" id="type" onchange="disableyear('yearStudentSelect', this)">
                         <option value="student">Student</option>
                         <option value="teacher">Teacher</option>
                     </select>
@@ -122,12 +121,12 @@
     
                     <li class="listyle14">
                           <label for="fourth">Fourth</label><nobr>
-                        <input type="radio" id="fourth" name="year" value="third">
+                        <input type="radio" id="fourth" name="year" value="fourth">
                     </li><br>  
                 </div>             
 
             </ul>
-            <button type="submit">Sign Up</button>
+            <button type="submit" name="register">Sign Up</button>
         </form>
     </div>
 	<div class="padding"></padding>
