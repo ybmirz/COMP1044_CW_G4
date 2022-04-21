@@ -9,6 +9,14 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
     require_once ("..\classes\User.php");
 
     $user = new User();
+    // check if user is banned.
+    if ($user->isBanned($username)) {
+        $_SESSION["message"] = "Accounts under that username has been banned. Please contact admin if this is false.";
+        $_SESSION["login_success"] = False;
+        header("Location: ../../dashboard.php");
+        exit();
+    }
+
     unset($_POST["username"]);
     unset($_POST["password"]);
     // Check if user logged in

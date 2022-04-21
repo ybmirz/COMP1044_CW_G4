@@ -48,40 +48,6 @@ class Book
             return $result[0];
     }
 
-    public function addPublisher($name, $address)
-    {
-        // Adds a new publisher into the table
-        $query = "INSERT INTO publisher (`id_pk`,`name`, `parentcompany`, `hq_address`) VALUES (NULL,?,?,?)";
-        $paramType = "sss";
-        $paramArray = array($name, $name, $address);
-        $this->ds->execute($query, $paramType, $paramArray);
-    }
-
-    // First occuring name record in the table publisher
-    public function getPublisherbyName($name)
-    {
-        $query = "SELECT * FROM publisher WHERE `name` = ?";
-        $paramArray = array($name);
-        $paramType = "s";
-        $result = $this->ds->Select($query, $paramType, $paramArray);
-        if (empty($result))
-            return False;
-        else
-            return $result[0];
-    }
-    // Function for id publisher
-    public function getPublisherById($publisher_id)
-    {
-        $query = "SELECT * FROM publisher WHERE `id_pk` = ?";
-        $paramArray = array($publisher_id);
-        $paramType = "s";
-        $result = $this->ds->Select($query, $paramType, $paramArray);
-        if (empty($result))
-            return False;
-        else
-            return $result[0];
-    }
-
     // Book information getting functions
     public function getBookInfoById($book_id)
     {
@@ -180,7 +146,43 @@ class Book
         return $success;
     }
 
+    //----------------- Publisher -------------------
 
+    public function addPublisher($name, $address)
+    {
+        // Adds a new publisher into the table
+        $query = "INSERT INTO publisher (`id_pk`,`name`, `parentcompany`, `hq_address`) VALUES (NULL,?,?,?)";
+        $paramType = "sss";
+        $paramArray = array($name, $name, $address);
+        $this->ds->execute($query, $paramType, $paramArray);
+    }
+
+    // First occuring name record in the table publisher
+    public function getPublisherbyName($name)
+    {
+        $query = "SELECT * FROM publisher WHERE `name` = ?";
+        $paramArray = array($name);
+        $paramType = "s";
+        $result = $this->ds->Select($query, $paramType, $paramArray);
+        if (empty($result))
+            return False;
+        else
+            return $result[0];
+    }
+    // Function for id publisher
+    public function getPublisherById($publisher_id)
+    {
+        $query = "SELECT * FROM publisher WHERE `id_pk` = ?";
+        $paramArray = array($publisher_id);
+        $paramType = "s";
+        $result = $this->ds->Select($query, $paramType, $paramArray);
+        if (empty($result))
+            return False;
+        else
+            return $result[0];
+    }
+
+    
     // get category information
     public function getCategory($id) {
         $getQuery = "SELECT * FROM category WHERE id_pk = ?";
@@ -191,5 +193,21 @@ class Book
             return False;
         else
             return $result[0];
+    }
+
+    // -------------- Borrowing Method -------------
+    // get alll current borrowing information that does not have a return
+    public function getAllBorrowed() {
+        $query = "SELECT B.id_pk, B.book_id_fk, B.borrower_owa_fk FROM borrow B, returns R WHERE B.id_pk != R.borrow_id_fk_pk;";
+        return $this->ds->Select($query);
+    }
+
+    public function getBorrowInfoById ($borrow_id) {
+        
+    }
+
+    // get Returning information
+    public function getReturnByBorrowId($borrow_id) {
+
     }
 }

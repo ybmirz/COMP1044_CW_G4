@@ -110,7 +110,7 @@ $books = $bookDs->getAllBooks();
 					// getting book information
 					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
 
-					$status = array("New" => "", "Damaged" => "", "Old"=>"");
+					$status = array("New" => "", "Damaged" => "", "Old" => "");
 					$available = array("Available" => "", "Lost" => "", "Archived" => "");
 
 					$status[$book["status"]] = 'selected';
@@ -158,55 +158,92 @@ $books = $bookDs->getAllBooks();
 				echo '<h2 class="wtll" style="color:gray;">(None. <a href="./php/add_book.php" style="color:purple;"> Donate some books</a>  now)</h2>';
 			?>
 
-			<h2 class="wtl"> Borrowed books </h2>
+			<?php
+			// getting currently borrowed; a book is under borrowing when there is
+			// no subsequent return data
+			$borrow = $bookDs->getAllBorrowed();
+			$hasBorrow = False;
+			foreach ($borrow as $borrowed_book) {
+				if ($borrowed_book["borrower_owa_fk"] == $_SESSION["username"]) {
+					$hasBorrow = True;
+					break;
+				}
+			}
+			if ($hasBorrow)
+				echo '<h2 class="wtl"> Borrowed books </h2>';
+			foreach ($borrow as $borrowed_book) {
+				if ($borrowed_book["borrower_owa_fk"] == $_SESSION["username"]) {
+					// get Book and book info
+					$book = $bookDs->getBookById($borrowed_book["book_id_fk"]);
+					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
 
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
+					$div = <<<html
+						<div class="cyanborder">
+						<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
 				<div class="header2">
 					<div class="f2">
 						<ul>
 							<div class="navlink">
-								<li>
-									<form action="/action_page.php" style="padding-right: 50px;">
-										<select name="" id="">
-											<option value="">Damaged</option>
-											<option value="">?</option>
-										</select>
-									</form>
-								</li>
-								<li>
-									<button type="button" class="button4">Return Book</button>
-								</li>
+							<li>
+								<form id="returnForm" action="./php/php-action/return_book.php?book_id={$book["id_pk"]}" style="padding-right: 50px;" method="post">
+									<select name="status" id="status">
+									<option value="s1"{$status["New"]}>New</option>
+									<option value="s2"{$status["Damaged"]}>Damaged</option>
+									<option value="s3"{$status["Old"]}>Old</option>
+									</select>
+								</form>
+							</li>
+							<li>
+								<button type="submit" class="button4" form="returnForm">Return Book</button>
+							</li>
 							</div>
 						</ul>
-					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
+					</div><!--f2-->
+				</div><!--header-->
 				<br>
-			</div> <!-- Cyanborder -->
+				</div> <!-- Cyanborder -->
+				html;
+				echo $div;
+				}
+			}
 
-			<h2 class="wtl"> Library </h2>
+			echo '<h2 class="wtl">Library</h2>';
 
-			<div class="cyanborder">
-				<h2 class="ctl"> Natural Resources <span class="gray"> by Robin Kerrod </span></h2>
-				<div class="header2">
-					<div class="lp">
-						<button type="button" class="button1">Book</button>
-					</div>
-					<!--lp-->
-					<div class="f2">
-						<div class="navlink">
-							<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+			// loop through every book and display ones that you do not own
+			$noBooks = True;
+			foreach($books as $book) {
+				if($book["owner_owa_fk"] != $_SESSION["username"]) {
+					$noBooks = False;
+					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
+
+					$div = <<<html
+					<div class="cyanborder">
+					<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
+					<div class="header2">
+						<div class="lp">
+							<a href="./php/php-action/borrow_book.php?username={$_SESSION["username"]}&book_id={$book["id_pk"]}"><button type="button" class="button1">Book</button></a>
 						</div>
-						<!--navlink-->
+						<!--lp-->
+						<div class="f2">
+							<div class="navlink">
+								<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
+							</div>
+							<!--navlink-->
+						</div>
+						<!--f2-->
 					</div>
-					<!--f2-->
-				</div>
-				<!--header-->
+					<!--header-->
+					<br>
+				</div> <!-- Cyanborder -->
 				<br>
-			</div> <!-- Cyanborder -->
-			<br>
+				html;
+				echo $div;
+				}			
+			}
+			if ($noBooks) {
+				echo '<h2 class="wtll" style="color:gray;">(No Books in the Library. <a href="./php/add_book.php" style="color:purple;"> Donate some books</a>  now :D)</h2>';
+			}
+			?>
 
 		</div> <!-- whiteborder -->
 	</div> <!-- border -->

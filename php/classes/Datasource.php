@@ -5,7 +5,7 @@ class Datasource {
     const HOST = "localhost";
     const USERNAME = "root";
     const PASS = "";
-    CONST DBNAME = "bookswamp";
+    CONST DBNAME = "bookswamp_test";
 
     private $conn;
     // Constructor

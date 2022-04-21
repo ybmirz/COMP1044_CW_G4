@@ -175,6 +175,17 @@ class User
         }
         return $deletionResult;
     }
+
+    public function isBanned($owa) {
+        $query = "SELECT status FROM member WHERE owa_pk = ?";
+        $paramArray = array($owa);
+        $paramType = "s";
+        $result = $this->ds->Select($query, $paramType, $paramArray)[0];
+        if ($result["status"] == 'Banned') 
+            return True;
+        else
+            return False;
+    }
 }
 
 ?>
