@@ -369,4 +369,10 @@
 		color: inherit;
 		cursor: auto;
 	}
+
+	iframe {
+		max-width: 100% !important;
+        width: 80% !important;
+        height: 100% !important;
+	}
 }

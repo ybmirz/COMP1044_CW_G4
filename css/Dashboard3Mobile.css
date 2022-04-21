@@ -346,4 +346,10 @@
 		text-decoration: inherit;
 		color: inherit;
 	}
+
+	iframe {
+		max-width: 100% !important;
+        width: 80% !important;
+        height: 80%!important;
+	}
 }

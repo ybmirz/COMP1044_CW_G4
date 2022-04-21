@@ -118,7 +118,7 @@ $books = $bookDs->getAllBooks();
 
 					$div = <<<html
 						<div class="cyanborder"">
-					<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
+					<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> [ID:{$book["id_pk"]}] {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
 					<div class="header2">
 						<form action="./php/manage_book.php?book_id={$book["id_pk"]}" class="option" id="statusForm" method="post">
 							<select name="status" id="status" class="option">
@@ -177,19 +177,25 @@ $books = $bookDs->getAllBooks();
 					$book = $bookDs->getBookById($borrowed_book["book_id_fk"]);
 					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
 
+					$status = array("New" => "", "Damaged" => "", "Old" => "");
+					$available = array("Available" => "", "Lost" => "", "Archived" => "");
+
+					$status[$book["status"]] = 'selected';
+					$available[$book["availability"]] = 'selected';
+
 					$div = <<<html
 						<div class="cyanborder">
-						<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
+						<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> [ID:{$book["id_pk"]}] {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span> [Due Date:{$borrowed_book["due_date"]}]</h2></a>
 				<div class="header2">
 					<div class="f2">
 						<ul>
 							<div class="navlink">
 							<li>
-								<form id="returnForm" action="./php/php-action/return_book.php?book_id={$book["id_pk"]}" style="padding-right: 50px;" method="post">
+								<form id="returnForm" action="./php/php-action/return_book.php?borrow_id={$borrowed_book["id_pk"]}" style="padding-right: 50px;" method="post">
 									<select name="status" id="status">
-									<option value="s1"{$status["New"]}>New</option>
-									<option value="s2"{$status["Damaged"]}>Damaged</option>
-									<option value="s3"{$status["Old"]}>Old</option>
+									<option value="New"{$status["New"]}>New</option>
+									<option value="Damaged"{$status["Damaged"]}>Damaged</option>
+									<option value="Old"{$status["Old"]}>Old</option>
 									</select>
 								</form>
 							</li>
@@ -203,46 +209,20 @@ $books = $bookDs->getAllBooks();
 				<br>
 				</div> <!-- Cyanborder -->
 				html;
-				echo $div;
+					echo $div;
 				}
 			}
 
 			echo '<h2 class="wtl">Library</h2>';
 
 			// loop through every book and display ones that you do not own
-			$noBooks = True;
-			foreach($books as $book) {
-				if($book["owner_owa_fk"] != $_SESSION["username"]) {
-					$noBooks = False;
-					$book_info = $bookDs->getBookInfoById($book["book_information_id_fk"]);
-
-					$div = <<<html
-					<div class="cyanborder">
-					<a class="nostyle" href="./php/book_info.php?book_info_id={$book_info["id_pk"]}"><h2 class="ctl"> {$book_info["title"]} <span class="gray"> by {$book_info["authors"]}</span></h2></a>
-					<div class="header2">
-						<div class="lp">
-							<a href="./php/php-action/borrow_book.php?username={$_SESSION["username"]}&book_id={$book["id_pk"]}"><button type="button" class="button1">Book</button></a>
-						</div>
-						<!--lp-->
-						<div class="f2">
-							<div class="navlink">
-								<h2 class="cfr"> Status: New <span class="green"> Avaliable </span></h2>
-							</div>
-							<!--navlink-->
-						</div>
-						<!--f2-->
-					</div>
-					<!--header-->
-					<br>
-				</div> <!-- Cyanborder -->
-				<br>
-				html;
-				echo $div;
-				}			
-			}
+			$noBooks = false;
+			if (empty($books))
+				$noBooks = true;
 			if ($noBooks) {
-				echo '<h2 class="wtll" style="color:gray;">(No Books in the Library. <a href="./php/add_book.php" style="color:purple;"> Donate some books</a>  now :D)</h2>';
-			}
+				echo '<h2 class="wtll" style="color:gray;">(No Books in the Library. <a href="./php/add_book.php" style="color:purple;"> Donate some books</a> now)</h2><br><br>';
+			} else
+				echo '<iframe src="./php/library.php"></iframe><br>';
 			?>
 
 		</div> <!-- whiteborder -->
