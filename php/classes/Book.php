@@ -146,6 +146,15 @@ class Book
         return $success;
     }
 
+    // update book status
+    public function updateBookStatus($book_id,$status){
+        $query = "UPDATE book SET `status`= ? WHERE id_pk = ?";
+        $paramArray = array($status ,$book_id);
+        $paramType = "si";
+        $success = $this->ds->execute($query,$paramType,$paramArray);
+        return $success;
+    }
+
     //----------------- Publisher -------------------
 
     public function addPublisher($name, $address)
@@ -195,19 +204,70 @@ class Book
             return $result[0];
     }
 
-    // -------------- Borrowing Method -------------
+    // -------------- Borrowing Methods -------------
     // get alll current borrowing information that does not have a return
     public function getAllBorrowed() {
-        $query = "SELECT B.id_pk, B.book_id_fk, B.borrower_owa_fk FROM borrow B, returns R WHERE B.id_pk != R.borrow_id_fk_pk;";
+        $query = "SELECT B.id_pk, B.book_id_fk, B.borrower_owa_fk, B.due_date FROM borrow B 
+        WHERE NOT EXISTS (SELECT * FROM returns R WHERE R.borrow_id_fk_pk = B.id_pk)";
         return $this->ds->Select($query);
     }
 
+    public function isBooked($book_id) {
+        // getting a specific borrowed book by its book id
+        $currentBorrowed = $this->getAllBorrowed();
+        $booked = False;
+        foreach($currentBorrowed as $borrowed) {
+            if ($borrowed["book_id_fk"] == $book_id) 
+                $booked = True;
+        }
+        return $booked;
+    }
+
     public function getBorrowInfoById ($borrow_id) {
-        
+        $query = "SELECT * FROM borrow WHERE id_pk=?";
+        $paramType = "i";
+        $paramArray = array($borrow_id);
+        return $this->ds->Select($query, $paramType, $paramArray)[0];
+    }
+
+    // gets latest current borrow info by a book id
+    public function getBorrowInfoByBookId ($borrow_id) {
+        $query = "SELECT B.id_pk, B.book_id_fk, B.borrower_owa_fk, B.borrow_date, B.due_date FROM borrow B, returns R 
+        WHERE B.id_pk != R.borrow_id_fk_pk AND B.book_id_fk=?
+        ORDER BY B.borrow_date DESC;";
+        $paramType = "i";
+        $paramArray = array($borrow_id);
+        return $this->ds->Select($query, $paramType, $paramArray)[0];
     }
 
     // get Returning information
     public function getReturnByBorrowId($borrow_id) {
+        $query = "SELECT * FROM returns WHERE borrow_id_fk_pk=?";
+        $paramType = "i";
+        $paramArray = array($borrow_id);
+        return $this->ds->Select($query, $paramType, $paramArray)[0];
+    }
+    
+    // adds a borrow book record returns bool
+    public function borrowBook($book_id, $owa) {
+        date_default_timezone_set("UTC");
+        $borrowDate =  date('Y-m-d H:i:s');
+        $dueDate = date('Y-m-d H:i:s', strtotime($borrowDate. '+ 21 days'));
 
+        $query = "INSERT INTO borrow (`id_pk`, `book_id_fk`, `borrower_owa_fk`, `borrow_date`, `due_date`) VALUES (NULL,?,?,?,?);";
+        $paramArray = array($book_id, $owa, $borrowDate, $dueDate);
+        $paramType = "isss";
+        return $this->ds->execute($query,$paramType, $paramArray);
+    }
+
+    // adds a return record in returns and return operation bool
+    public function returnBook($borrow_id) {
+        date_default_timezone_set("UTC");
+        $date = date('Y-m-d H:i:s');
+
+        $query = "INSERT INTO returns (`borrow_id_fk_pk`, `return_date`) VALUES (?,?)";
+        $paramArray = array($borrow_id,$date);
+        $paramType = "ss";
+        return $this->ds->execute($query,$paramType, $paramArray);
     }
 }

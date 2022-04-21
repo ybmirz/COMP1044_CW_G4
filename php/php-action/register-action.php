@@ -76,6 +76,7 @@ if (!$success) {
     // Check if user logged in
     $_SESSION["username"] = $owa;
     $_SESSION["login_success"] = True;
+    $_SESSION["firstName"] = $firstname;
     $_SESSION["admin"] = False;
 }
 header("Location: ../../dashboard.php");
