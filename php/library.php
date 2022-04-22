@@ -1,5 +1,5 @@
 <head>
-	<title>BookSwap Semenyih Library</title>
+	<title>BookSwamp Semenyih Library</title>
 	<link rel="icon" href="./img/logo.png" />
 	<link rel="stylesheet" href="../css/Dashboard.css" media="screen and (min-width: 900px)">
 	<link rel="stylesheet" href="../css/Dashboard3Mobile.css" media="screen and (max-width: 900px)">
