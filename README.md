@@ -5,7 +5,7 @@
 
 ## Group Members
 - 20310915 Mirza Hizriyan
-- 20297507 Lisa Yen Xin
+- 20297507 Lisa Ho Yen Xin
 - 20314682 Ibrahim Ahmad Faiz
 - 20297572 Soh Kar Seng
 - 20387104 Safa Yousif
