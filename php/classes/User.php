@@ -1,6 +1,7 @@
 <?php
 namespace bookSwap;
 
+set_include_path(dirname(__FILE__));
 use \bookSwap\Datasource;
 use mysqli;
 use mysqli_sql_exception;

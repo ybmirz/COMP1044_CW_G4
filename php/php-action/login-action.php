@@ -1,5 +1,6 @@
 <?php
 namespace bookSwap;
+set_include_path(dirname(__FILE__));
 use \bookSwap\User;
 
 if (!empty($_POST["username"]) && !empty($_POST["password"])) {

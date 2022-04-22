@@ -1,4 +1,5 @@
 <?php
+set_include_path(dirname(__FILE__));
 session_start();
 
 use \bookSwap\User;
