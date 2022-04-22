@@ -1,6 +1,7 @@
 <?php
 
 namespace bookSwap;
+set_include_path(dirname(__FILE__));
 use \bookSwap\User;
 
 if (isset($_POST["register"])) {

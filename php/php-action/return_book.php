@@ -1,5 +1,5 @@
 <?php
-
+set_include_path(dirname(__FILE__));
 use \bookSwap\Book;
 session_start();
 
