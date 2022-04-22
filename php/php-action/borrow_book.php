@@ -28,7 +28,7 @@ if (!isset($_GET["book_id"])) {
     exit();
 }
 
-require_once ('/classes/Book.php');
+require_once (dirname(__DIR__).'/classes/Book.php');
 $bookDs = new Book();
 
 // check if the book is already booked.

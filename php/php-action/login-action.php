@@ -7,7 +7,7 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
     session_start();
     $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
-    require_once ("/classes/User.php");
+    require_once (dirname(__DIR__) ."/classes/User.php");
 
     $user = new User();
     // check if user is banned.

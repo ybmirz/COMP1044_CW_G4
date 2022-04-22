@@ -28,7 +28,7 @@ if (!isset($_GET["book_id"])) {
 }
 
 $book_id = $_GET["book_id"];
-require_once ('/classes/Book.php');
+require_once (dirname(__DIR__) . '/classes/Book.php');
 $bookDs = new Book();
 $success = $bookDs->deleteBook($book_id, $_SESSION["username"]);
 

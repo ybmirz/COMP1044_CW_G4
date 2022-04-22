@@ -33,7 +33,7 @@ if (!empty($_SESSION["alert"])) {
 echo '</script>';
 
 // getting all books in the library
-require_once('/php/classes/Book.php');
+require_once(dirname(__FILE__) .'/php/classes/Book.php');
 $bookDs = new Book();
 $books = $bookDs->getAllBooks();
 ?>

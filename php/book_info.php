@@ -29,7 +29,7 @@ if (!isset($_GET["book_info_id"])) {
 
 $book_info_id = $_GET["book_info_id"];
 // gets the book information
-require_once ('/classes/Book.php');
+require_once (dirname(__FILE__)  . '/classes/Book.php');
 $bookDs = new Book();
 $book = $bookDs->getBookInfoById($book_info_id);
 if (!$book){

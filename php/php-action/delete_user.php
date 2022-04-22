@@ -28,7 +28,7 @@ if (empty($_GET["username"])) {
     exit();
 }
 
-require_once ('/classes/User.php');
+require_once (dirname(__DIR__) . '/classes/User.php');
 $user = new User();
 $success = $user->deleteMember($_GET["username"]);
 
