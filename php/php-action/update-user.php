@@ -1,6 +1,6 @@
 <?php
 namespace bookSwap;
-set_include_path(dirname(__FILE__));
+set_include_path(dirname(__DIR__));
 use \bookSwap\User;
 
 session_start();
@@ -60,7 +60,7 @@ switch ($_POST["type"]) {
         break;
 }
 
-require_once('../classes/User.php');
+require_once('/classes/User.php');
 $user = new User();
 $result = $user->updateMember(
     $owa,

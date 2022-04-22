@@ -59,7 +59,7 @@ if (isset($_POST["bookAddition"])) {
         echo '</script>';
     }
 
-    require_once('./classes/Book.php');
+    require_once('/classes/Book.php');
     $bookDs = new Book();
     $publisherData = $bookDs->getPublisherbyName($publisherName);
     if (!$publisherData) { // if no prev publisher info,, add publisher

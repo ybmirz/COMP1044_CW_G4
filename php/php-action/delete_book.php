@@ -1,5 +1,5 @@
 <?php
-set_include_path(dirname(__FILE__));
+set_include_path(dirname(__DIR__));
 use \bookSwap\Book;
 session_start();
 
@@ -28,7 +28,7 @@ if (!isset($_GET["book_id"])) {
 }
 
 $book_id = $_GET["book_id"];
-require_once ('../classes/Book.php');
+require_once ('/classes/Book.php');
 $bookDs = new Book();
 $success = $bookDs->deleteBook($book_id, $_SESSION["username"]);
 

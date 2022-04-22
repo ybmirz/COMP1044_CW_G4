@@ -2,7 +2,7 @@
 // Get all the users into an array
 set_include_path(dirname(__FILE__));
 use \bookSwap\User;
-require_once ('./classes/User.php');
+require_once ('/classes/User.php');
 
 $user = new User();
 $memberList = $user->getAllUsers();

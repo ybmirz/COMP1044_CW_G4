@@ -1,5 +1,5 @@
 <?php
-set_include_path(dirname(__FILE__));
+set_include_path(dirname(__DIR__));
 use \bookSwap\Book;
 session_start();
 
@@ -28,7 +28,7 @@ if (!isset($_GET["book_id"])) {
     exit();
 }
 
-require_once ('../classes/Book.php');
+require_once ('/classes/Book.php');
 $bookDs = new Book();
 
 // check if the book is already booked.

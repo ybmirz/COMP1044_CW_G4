@@ -38,7 +38,7 @@ if (empty($_GET["book_id"])) {
 }
 
 
-require_once('./classes/Book.php');
+require_once('/classes/Book.php');
 $bookDs = new Book();
 $owned_book = $bookDs->getBookById($_GET["book_id"]);
 $book = $bookDs->getBookInfoById($owned_book["book_information_id_fk"]);

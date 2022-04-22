@@ -1,6 +1,6 @@
 <?php
 namespace bookSwap;
-set_include_path(dirname(__FILE__));
+set_include_path(dirname(__DIR__));
 use \bookSwap\User;
 
 session_start();
@@ -28,7 +28,7 @@ if (empty($_GET["username"])) {
     exit();
 }
 
-require_once ('../classes/User.php');
+require_once ('/classes/User.php');
 $user = new User();
 $success = $user->banMember($_GET["username"]);
 

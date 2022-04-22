@@ -1,5 +1,5 @@
 <?php
-set_include_path(dirname(__FILE__));
+set_include_path(dirname(__DIR__));
 use \bookSwap\Book;
 session_start();
 
@@ -68,7 +68,7 @@ switch ($_POST["availability"]) {
         break;
 }
 
-require_once ('../classes/Book.php');
+require_once ('/classes/Book.php');
 $bookDs = new Book();
 
 if (!($title && $category && $author && $publisherName && $publisherAddress && $ISBN && $year && $available && $status)) {
