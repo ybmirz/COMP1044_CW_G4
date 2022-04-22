@@ -32,7 +32,7 @@ if (!isset($_GET["username"])) {
 } // else it will edit the users per page
 
 // Getting member info
-require_once('./classes/User.php');
+require_once('/classes/User.php');
 $owa = $_GET["username"];
 $user = new User();
 $memberInfo = $user->getMemberByOWA($owa);
