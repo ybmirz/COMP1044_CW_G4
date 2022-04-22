@@ -28,7 +28,7 @@ if (!(isset($_GET["borrow_id"]) && isset($_POST["status"]))) {
     exit();
 }
 
-require_once ('/classes/Book.php');
+require_once (dirname(__DIR__).'/classes/Book.php');
 $bookDs = new Book();
 
 $borrowInfo = $bookDs->getBorrowInfoById($_GET["borrow_id"]);

@@ -12,7 +12,7 @@ class User
     private $ds;
 
     function __construct() {
-        require_once "Datasource.php";
+        require_once dirname(__FILE__). "Datasource.php";
         $this->ds = new Datasource();
     }
 

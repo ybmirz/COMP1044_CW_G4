@@ -14,7 +14,7 @@ use \bookSwap\Book;
 
 session_start();
 // getting all books in the library
-require_once('/classes/Book.php');
+require_once(dirname(__FILE__) . '/classes/Book.php');
 $bookDs = new Book();
 $books = $bookDs->getAllBooks();
 $borrowed_books = $bookDs->getAllBorrowed();

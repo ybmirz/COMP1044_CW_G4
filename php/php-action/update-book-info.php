@@ -68,7 +68,7 @@ switch ($_POST["availability"]) {
         break;
 }
 
-require_once ('/classes/Book.php');
+require_once (dirname(__DIR__) .'/classes/Book.php');
 $bookDs = new Book();
 
 if (!($title && $category && $author && $publisherName && $publisherAddress && $ISBN && $year && $available && $status)) {

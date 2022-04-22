@@ -60,7 +60,7 @@ switch ($_POST["type"]) {
         break;
 }
 
-require_once('/classes/User.php');
+require_once(dirname(__DIR__).'/classes/User.php');
 $user = new User();
 $result = $user->updateMember(
     $owa,
